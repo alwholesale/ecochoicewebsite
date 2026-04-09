@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Brands — Eco Choice Group of Companies</title>
+  <meta name="description" content="Explore all 9 brands under Eco Choice Group — from wholesale trading and fresh farms to premium restaurants and food tech platforms." />
+  <link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== FILTER NAV ===== */
+    .filter-bar {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 3rem 0 4rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--white-dim);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+
+    /* ===== BRAND FULL CARD ===== */
+    .brand-full-section { padding: 5rem 0; }
+    .brand-full-section:nth-child(even) { background: var(--dark); }
+
+    .brand-full-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .brand-full-card.reverse { direction: rtl; }
+    .brand-full-card.reverse > * { direction: ltr; }
+
+    .brand-visual {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--dark-card) 60%, rgba(14,51,32,0.5) 100%);
+      border: 1px solid var(--border-green);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .brand-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,92,56,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,92,56,0.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .brand-visual:hover { border-color: rgba(200,164,90,0.3); }
+    .brand-visual img {
+      max-height: 80px;
+      max-width: 200px;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter: brightness(1.1);
+    }
+    .brand-visual .brand-emoji { font-size: 4rem; position: relative; z-index: 1; }
+    .brand-visual .visit-btn {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%; transform: translateX(-50%);
+      background: rgba(7,12,10,0.8);
+      border: 1px solid var(--border);
+      color: var(--white-dim);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: var(--transition);
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+    }
+    .brand-visual:hover .visit-btn { border-color: var(--gold); color: var(--gold); }
+
+    .brand-info .category-tag { margin-bottom: 1rem; }
+    .brand-info h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--white); margin-bottom: 1rem; }
+    .brand-info .tagline { font-family: var(--font-display); font-size: 1rem; color: var(--gold); font-style: italic; margin-bottom: 1.5rem; display: block; }
+    .brand-info p { color: var(--white-dim); line-height: 1.8; font-size: 0.92rem; margin-bottom: 1rem; }
+    .brand-offerings {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+    }
+    .offering-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--white-dim);
+    }
+    .offering-item::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green-light);
+      flex-shrink: 0;
+    }
+    .brand-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider { padding: 2rem 0; }
+    .divider-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .divider-line { flex: 1; height: 1px; background: var(--border); }
+    .divider-diamond { color: var(--gold); font-size: 0.6rem; }
+
+    @media (max-width: 768px) {
+      .brand-full-card { grid-template-columns: 1fr; gap: 2.5rem; }
+      .brand-full-card.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="loader">
+  <div class="loader-logo"><img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="" onerror="this.style.display='none'" /></div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">Eco Choice Group<span>of Companies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="brands.html" class="active">Our Brands</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="brands.html">Our Brands</a>
+  <a href="services.html">Services</a><a href="sustainability.html">Sustainability</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="container">
+    <span class="label-tag">The Portfolio</span>
+    <h1 class="display-lg">Nine Brands.<br/><em style="color:var(--gold);">One Ecosystem.</em></h1>
+    <div class="divider divider-left"></div>
+    <p>From wholesale trade and digital platforms to local farms, premium meat processing, and inspired restaurant concepts — the Eco Choice portfolio spans the entire food value chain.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div style="background:var(--dark);padding:0 0 1rem;">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterBrands('all', this)">All Brands</button>
+      <button class="filter-btn" onclick="filterBrands('trading', this)">Trading</button>
+      <button class="filter-btn" onclick="filterBrands('farming', this)">Farming</button>
+      <button class="filter-btn" onclick="filterBrands('delivery', this)">Delivery</button>
+      <button class="filter-btn" onclick="filterBrands('restaurant', this)">Restaurants</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BRANDS ==================== -->
+
+<!-- 1. ECO CHOICE GENERAL TRADING -->
+<section class="brand-full-section" id="general-trading" data-category="trading">
+  <div class="container">
+    <div class="brand-full-card fade-in">
+      <div class="brand-visual">
+        <div class="brand-emoji">🌐</div>
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--white);position:relative;z-index:1;text-align:center;padding:0 1rem;">Eco Choice<br/><span style="color:var(--gold);font-size:1.1rem;">General Trading LLC</span></div>
+        <a href="contact.html" class="visit-btn">Enquire Now →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Food Trading · B2B</span>
+        <h2>Eco Choice General Trading LLC</h2>
+        <span class="tagline">"The Backbone of the Group"</span>
+        <p>The founding entity of Eco Choice Group and the operational backbone of the entire ecosystem. Eco Choice General Trading LLC sources, imports, and distributes a diverse range of food products across the UAE — serving hotels, restaurants, supermarkets, and food manufacturers.</p>
+        <p>With deep supplier relationships and a robust logistics infrastructure, we ensure that quality food reaches the right hands at the right time — every time.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">FMCG food products import & distribution</div>
+          <div class="offering-item">Bulk commodity sourcing & trading</div>
+          <div class="offering-item">B2B supply to hotels, restaurants & retail</div>
+          <div class="offering-item">Private label & custom sourcing solutions</div>
+          <div class="offering-item">Cold chain logistics management</div>
+        </div>
+        <div class="brand-actions">
+          <a href="contact.html" class="btn btn-primary btn-arrow">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. AL WHOLESALE -->
+<section class="brand-full-section" id="al-wholesale" data-category="trading">
+  <div class="container">
+    <div class="brand-full-card reverse fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/Al%20wholesale.png" alt="Al Wholesale" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">🏪</div>
+        <a href="https://www.alwholesale.ae" target="_blank" class="visit-btn">Visit alwholesale.ae →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Wholesale · B2B Platform</span>
+        <h2>Al Wholesale</h2>
+        <span class="tagline">"The UAE's B2B Food Wholesale Platform"</span>
+        <p>Al Wholesale is the UAE's trusted B2B food wholesale solution — connecting food businesses of all sizes with premium suppliers at competitive prices. Whether you're a restaurant owner, supermarket buyer, or institutional caterer, Al Wholesale delivers the scale and efficiency you need.</p>
+        <p>Operating from a large-scale warehouse facility in Al Qusais Industrial Area, we offer a comprehensive catalogue of fresh, frozen, chilled, and ambient food products ready for bulk ordering.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Fresh & frozen food wholesale</div>
+          <div class="offering-item">Bulk meat, poultry & seafood supply</div>
+          <div class="offering-item">Dairy, dry goods & commodity distribution</div>
+          <div class="offering-item">Direct-to-business delivery across UAE</div>
+          <div class="offering-item">Custom wholesale pricing & contracts</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.alwholesale.ae" target="_blank" class="btn btn-primary btn-arrow">Visit Website</a>
+          <a href="contact.html" class="btn btn-outline">Partner With Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. GO-SI -->
+<section class="brand-full-section" id="go-si" data-category="delivery">
+  <div class="container">
+    <div class="brand-full-card fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/Go-si.png" alt="Go-si" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">⚡</div>
+        <a href="https://www.go-si.com" target="_blank" class="visit-btn">Visit go-si.com →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Food Tech · Delivery</span>
+        <h2>Go-si</h2>
+        <span class="tagline">"Smart Food. Smarter Living."</span>
+        <p>Go-si is a next-generation food platform built for the modern UAE consumer. Combining smart technology with premium food offerings, Go-si delivers a seamless experience for discovering, ordering, and receiving fresh, healthy, and convenient food options.</p>
+        <p>Designed around the pace of life in the UAE, Go-si brings restaurant-quality food, curated meal solutions, and subscription-based healthy eating directly to your door — fast, fresh, and hassle-free.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Tech-enabled food delivery platform</div>
+          <div class="offering-item">Healthy meal subscription plans</div>
+          <div class="offering-item">Curated restaurant & brand partnerships</div>
+          <div class="offering-item">Express delivery across Dubai & UAE</div>
+          <div class="offering-item">Smart food curation & personalization</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.go-si.com" target="_blank" class="btn btn-primary btn-arrow">Visit Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. EMIRATE FARMS -->
+<section class="brand-full-section" id="emirate-farms" data-category="farming">
+  <div class="container">
+    <div class="brand-full-card reverse fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/Emirate%20Farms.png" alt="Emirate Farms" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">🌾</div>
+        <a href="https://www.emiratefarms.ae" target="_blank" class="visit-btn">Visit emiratefarms.ae →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Farming · Food Sovereignty</span>
+        <h2>Emirate Farms</h2>
+        <span class="tagline">"Grown Here. For Here."</span>
+        <p>Emirate Farms champions local food sovereignty — growing fresh, nutritious produce within the UAE using innovative, climate-adapted farming techniques. We are committed to reducing the country's reliance on food imports by building a thriving local agricultural ecosystem.</p>
+        <p>From hydroponics and vertical farming to open-field cultivation, Emirate Farms demonstrates that the UAE's food future can be grown here — sustainably, efficiently, and at scale.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">UAE-grown fresh vegetables & herbs</div>
+          <div class="offering-item">Climate-resilient hydroponic farming</div>
+          <div class="offering-item">Farm-to-table direct supply</div>
+          <div class="offering-item">B2B fresh produce partnerships</div>
+          <div class="offering-item">Sustainable agriculture advocacy</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.emiratefarms.ae" target="_blank" class="btn btn-primary btn-arrow">Visit Website</a>
+          <a href="contact.html" class="btn btn-outline">Become a Partner</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ECG MEAT PRODUCTS -->
+<section class="brand-full-section" id="meat-products" data-category="trading">
+  <div class="container">
+    <div class="brand-full-card fade-in">
+      <div class="brand-visual">
+        <div class="brand-emoji">🥩</div>
+        <div style="font-family:var(--font-display);font-size:1.6rem;color:var(--white);position:relative;z-index:1;text-align:center;padding:0 1rem;">ECG Meat<br/><span style="color:var(--green-light);font-size:0.9rem;">Products LLC</span></div>
+        <a href="contact.html" class="visit-btn">Enquire Now →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Meat Processing · Distribution</span>
+        <h2>Eco Choice Meat Products LLC</h2>
+        <span class="tagline">"Premium Halal. From Source to Shelf."</span>
+        <p>Eco Choice Meat Products LLC is the group's dedicated meat processing and distribution arm — ensuring that premium quality, Halal-certified meat reaches consumers, restaurants, and retailers at the highest standards of freshness and food safety.</p>
+        <p>We handle the full chain: sourcing from certified farms, processing, marinating, packaging, and delivering across the UAE. Our cold chain infrastructure guarantees product integrity at every step.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Halal-certified fresh & frozen meat</div>
+          <div class="offering-item">Beef, lamb, chicken & mutton range</div>
+          <div class="offering-item">Custom cuts for HORECA sector</div>
+          <div class="offering-item">Marination & value-added processing</div>
+          <div class="offering-item">Cold chain distribution across UAE</div>
+        </div>
+        <div class="brand-actions">
+          <a href="contact.html" class="btn btn-primary btn-arrow">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. AL CHEF -->
+<section class="brand-full-section" id="al-chef" data-category="delivery">
+  <div class="container">
+    <div class="brand-full-card reverse fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/Alchef.png" alt="Al Chef" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">👨‍🍳</div>
+        <a href="https://www.alcheftohome.com" target="_blank" class="visit-btn">Visit alcheftohome.com →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">D2C · Premium Meat Delivery</span>
+        <h2>Al Chef To Home</h2>
+        <span class="tagline">"Marinated to Perfection. Cut for Convenience."</span>
+        <p>Al Chef To Home bridges the gap between butcher and kitchen. We deliver premium quality fresh, marinated, and ready-to-cook meats directly to homes across Dubai and the UAE — making extraordinary meals as easy as opening a package.</p>
+        <p>From Mediterranean-style marinated chicken to slow-roasted whole lamb, Al Chef's range is crafted by culinary experts using authentic recipes and fresh, ethically sourced ingredients.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Fresh chicken, lamb, beef & mutton</div>
+          <div class="offering-item">Marinated meats (Mediterranean, Tikka, BBQ, Soy Ginger)</div>
+          <div class="offering-item">Slow-roasted & grilled ready-to-eat range</div>
+          <div class="offering-item">Cold cuts & processed meats</div>
+          <div class="offering-item">Same-day delivery across Dubai</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.alcheftohome.com" target="_blank" class="btn btn-primary btn-arrow">Shop Now</a>
+          <a href="contact.html" class="btn btn-outline">B2B Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. MEAT & BITES -->
+<section class="brand-full-section" id="meat-bites" data-category="restaurant">
+  <div class="container">
+    <div class="brand-full-card fade-in">
+      <div class="brand-visual">
+        <div class="brand-emoji">🍖</div>
+        <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--white);position:relative;z-index:1;text-align:center;padding:0 1rem;">Meat &amp; Bites<br/><span style="color:var(--gold);font-size:0.85rem;font-family:var(--font-body);letter-spacing:0.15em;text-transform:uppercase;">Restaurant LLC</span></div>
+        <a href="contact.html" class="visit-btn">Find a Table →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">Fine Casual Dining · Dubai</span>
+        <h2>Meat &amp; Bites Restaurant LLC</h2>
+        <span class="tagline">"Where Fire Meets Flavour"</span>
+        <p>Meat & Bites is a premium dining concept that celebrates the art of fire-cooked meats — a place where serious carnivores and adventurous food lovers come together for an immersive dining experience unlike any other in the UAE.</p>
+        <p>With a menu built around premium Halal cuts, bold marinades, and open-flame cooking techniques, Meat & Bites delivers an experience that goes beyond eating — it's theatre at the table.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Premium Halal meat dining experience</div>
+          <div class="offering-item">Open-flame grilling & signature cuts</div>
+          <div class="offering-item">Curated beverages & gourmet sides</div>
+          <div class="offering-item">Private dining & event bookings</div>
+          <div class="offering-item">Catering & corporate events</div>
+        </div>
+        <div class="brand-actions">
+          <a href="contact.html" class="btn btn-primary btn-arrow">Make a Reservation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. O'BITES -->
+<section class="brand-full-section" id="obites" data-category="restaurant">
+  <div class="container">
+    <div class="brand-full-card reverse fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/O'Bites.png" alt="O'Bites" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">🥪</div>
+        <a href="https://www.obites.ae" target="_blank" class="visit-btn">Visit obites.ae →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">QSR · Food Court · Dubai</span>
+        <h2>O'Bites</h2>
+        <span class="tagline">"United in Flavour — Rooted in the UAE"</span>
+        <p>O'Bites is a one-of-a-kind quick service restaurant concept built around creativity, community, and the joy of great food on the go. Inspired by the UAE's multicultural spirit, O'Bites crafts O-shaped handcrafted bites that unite global flavors in every single bite.</p>
+        <p>Currently located at Food Central, Deira City Centre, O'Bites serves fresh, locally inspired handheld creations with international flair — from savoury pocket sandwiches and kunafa chocolate bites to lava cakes, milkshakes, and mojitos.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Signature O-shaped handheld bites</div>
+          <div class="offering-item">Salmon avocado nachos & wraps</div>
+          <div class="offering-item">Dubai Kunafa chocolate bites</div>
+          <div class="offering-item">O'Lava Cake & dessert range</div>
+          <div class="offering-item">Available on Talabat, Deliveroo, Keeta & Noon</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.obites.ae" target="_blank" class="btn btn-primary btn-arrow">Order Now</a>
+          <a href="https://maps.app.goo.gl/DJzD2XnwjZeXWC8S9" target="_blank" class="btn btn-outline">Find Location</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FUEGO -->
+<section class="brand-full-section" id="fuego" data-category="restaurant">
+  <div class="container">
+    <div class="brand-full-card fade-in">
+      <div class="brand-visual">
+        <img src="https://ecochoicegroup.com/Fuego.png" alt="Fuego" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <div class="brand-emoji" style="display:none;">🔥</div>
+        <a href="https://www.fuego.ae" target="_blank" class="visit-btn">Visit fuego.ae →</a>
+      </div>
+      <div class="brand-info">
+        <span class="tag-pill category-tag">QSR · Bold Flavours</span>
+        <h2>Fuego</h2>
+        <span class="tagline">"Turn Up the Heat"</span>
+        <p>Fuego is where bold, fire-inspired food meets an energetic fast-casual atmosphere. A brand built for those who live life with intensity — the flavors are fierce, the energy is high, and every meal is a moment to remember.</p>
+        <p>Fuego's menu is designed around char-grilled, spiced, and fire-kissed food concepts — drawing from Latin, Middle Eastern, and global heat traditions — creating a uniquely exciting food experience that UAE diners can't resist.</p>
+        <div class="brand-offerings">
+          <div class="offering-item">Fire-grilled chicken & meat creations</div>
+          <div class="offering-item">Bold, spice-forward flavor profiles</div>
+          <div class="offering-item">Latin-Middle Eastern fusion concept</div>
+          <div class="offering-item">Fast casual dining & takeaway</div>
+          <div class="offering-item">Online ordering & delivery</div>
+        </div>
+        <div class="brand-actions">
+          <a href="https://www.fuego.ae" target="_blank" class="btn btn-primary btn-arrow">Visit Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:6rem 0;text-align:center;position:relative;">
+  <div class="grid-bg"></div>
+  <div class="container fade-in" style="position:relative;z-index:1;">
+    <span class="label-tag">Business Opportunities</span>
+    <h2 class="display-md" style="margin:1rem 0;">Interested in Partnering<br/>with Any of Our <em style="color:var(--gold)">Brands?</em></h2>
+    <p style="color:var(--white-dim);max-width:500px;margin:0 auto 2.5rem;font-size:1rem;">We welcome B2B partnerships, franchise enquiries, investment discussions, and supplier applications across all brands.</p>
+    <a href="contact.html" class="btn btn-gold btn-arrow">Get In Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+        <p>A UAE-based food innovation hub building scalable, sustainable food systems across the entire value chain.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="#" class="social-link">fb</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Brands</h4>
+        <ul>
+          <li><a href="#general-trading">Eco Choice Trading</a></li>
+          <li><a href="https://www.alwholesale.ae" target="_blank">Al Wholesale ↗</a></li>
+          <li><a href="https://www.go-si.com" target="_blank">Go-si ↗</a></li>
+          <li><a href="https://www.emiratefarms.ae" target="_blank">Emirate Farms ↗</a></li>
+          <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef ↗</a></li>
+          <li><a href="https://www.obites.ae" target="_blank">O'Bites ↗</a></li>
+          <li><a href="https://www.fuego.ae" target="_blank">Fuego ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><span class="icon">📞</span><div><div>(04) 357 0320</div><div>055 240 2196</div></div></div>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Al Qusais Industrial Area 1, Dubai, UAE</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Eco Choice Group of Companies. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function filterBrands(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.brand-full-section').forEach(sec => {
+    if (cat === 'all' || sec.dataset.category === cat) {
+      sec.style.display = '';
+      sec.style.animation = 'fadeIn 0.5s ease';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

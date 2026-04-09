@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability & Impact — Eco Choice Group</title>
+  <meta name="description" content="Eco Choice Group's commitment to sustainability — building climate-resilient food systems, supporting local farming, and creating community impact across the UAE." />
+  <link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== GREEN HERO ===== */
+    .sustain-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 9rem 0 6rem;
+    }
+    .sustain-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 100% at 0% 50%, rgba(9,40,22,0.95) 0%, transparent 60%),
+        linear-gradient(135deg, var(--green-deep) 0%, var(--black) 70%);
+    }
+    .leaf-bg {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 55%;
+      background:
+        radial-gradient(ellipse 80% 80% at 80% 50%, rgba(26,92,56,0.15) 0%, transparent 60%);
+      overflow: hidden;
+    }
+    .leaf-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      font-size: 8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+      line-height: 1;
+      filter: blur(2px);
+    }
+    .sustain-hero .container { position: relative; z-index: 2; }
+    .hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+    .hero-h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-family: var(--font-display);
+      font-weight: 300;
+      line-height: 1.0;
+      margin: 1.2rem 0 1.5rem;
+    }
+    .hero-h1 em { color: var(--green-light); font-style: italic; }
+    .sustain-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .sustain-hero-card {
+      background: rgba(17,26,20,0.7);
+      border: 1px solid var(--border-green);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    .sustain-hero-card:hover { border-color: var(--green-light); background: rgba(26,92,56,0.2); }
+    .sustain-hero-card .card-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .sustain-hero-card h4 { font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+    .sustain-hero-card p { font-size: 0.78rem; color: var(--white-dim); line-height: 1.4; }
+
+    /* ===== IMPACT NUMBERS ===== */
+    .impact-section { padding: 7rem 0; background: var(--dark); }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+    .impact-item {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .impact-item:last-child { border-right: none; }
+    .impact-item:hover { background: rgba(26,92,56,0.15); }
+    .impact-num { font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; color: var(--green-light); line-height: 1; }
+    .impact-lbl { font-size: 0.78rem; color: var(--white-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.5rem; }
+    .impact-desc { font-size: 0.78rem; color: rgba(245,245,240,0.4); margin-top: 0.3rem; }
+
+    /* ===== PILLARS ===== */
+    .pillars2 { padding: 7rem 0; }
+    .pillars2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .pillar2-card {
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .pillar2-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,92,56,0.15) 0%, rgba(17,26,20,0.4) 100%);
+    }
+    .pillar2-card:hover { border-color: var(--green-light); transform: translateY(-4px); }
+    .pillar2-icon { font-size: 3rem; display: block; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    .pillar2-card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); margin-bottom: 1rem; position: relative; z-index: 1; }
+    .pillar2-card p { color: var(--white-dim); font-size: 0.9rem; line-height: 1.8; position: relative; z-index: 1; margin-bottom: 1.5rem; }
+    .pillar2-actions { position: relative; z-index: 1; }
+    .action-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.83rem;
+      color: var(--white-dim);
+    }
+    .action-check {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: rgba(26,92,56,0.4);
+      border: 1px solid var(--green-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      color: var(--green-light);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ===== SDG ALIGNMENT ===== */
+    .sdg-section { padding: 7rem 0; background: var(--dark); }
+    .sdg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .sdg-card {
+      background: rgba(17,26,20,0.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .sdg-card:hover { border-color: rgba(200,164,90,0.3); transform: translateY(-4px); }
+    .sdg-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .sdg-title { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; letter-spacing: 0.05em; }
+    .sdg-card p { font-size: 0.82rem; color: var(--white-dim); line-height: 1.6; }
+
+    /* ===== COMMITMENT BAR ===== */
+    .commitment-bar { padding: 5rem 0; }
+    .bar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .bar-item { }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--white-dim);
+      margin-bottom: 0.5rem;
+    }
+    .bar-label strong { color: var(--white); }
+    .bar-track {
+      height: 4px;
+      background: rgba(245,245,240,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bar-fill.animate { transform: scaleX(1); }
+
+    @media (max-width: 1024px) {
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .sdg-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .pillars2-grid { grid-template-columns: 1fr; }
+      .bar-grid { grid-template-columns: 1fr; }
+      .impact-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .impact-item:last-child { border-bottom: none; }
+      .sdg-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="loader">
+  <div class="loader-logo"><img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="" onerror="this.style.display='none'" /></div>
+  <div class="loader-bar"></div>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">Eco Choice Group<span>of Companies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="sustainability.html" class="active">Sustainability</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="brands.html">Our Brands</a>
+  <a href="services.html">Services</a><a href="sustainability.html">Sustainability</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="sustain-hero">
+  <div class="leaf-bg">
+    <div class="leaf-pattern">🌿🌱🌾🍃🌿🌱🌾🍃🌿🌱🌾🍃🌿🌱🌾🍃🌿🌱🌾🍃🌿🌱🌾🍃</div>
+  </div>
+  <div class="container">
+    <div class="hero-split">
+      <div>
+        <div class="brand-badge"><span class="dot"></span> Our Commitment</div>
+        <h1 class="hero-h1">
+          Sustaining<br/>
+          <em>Tomorrow's</em><br/>
+          Table
+        </h1>
+        <p style="color:var(--white-dim);font-size:1.05rem;line-height:1.7;max-width:480px;margin-bottom:2rem;">Sustainability isn't a department at Eco Choice Group — it's the foundation upon which every decision, product, and partnership is built. We believe the food systems of tomorrow must be built today.</p>
+        <a href="#pillars" class="btn btn-primary btn-arrow">Our Approach</a>
+      </div>
+      <div class="sustain-cards fade-in">
+        <div class="sustain-hero-card">
+          <div class="card-icon">🌾</div>
+          <div>
+            <h4>Climate-Resilient Farming</h4>
+            <p>Investing in UAE-based agriculture that thrives in extreme heat and water scarcity</p>
+          </div>
+        </div>
+        <div class="sustain-hero-card">
+          <div class="card-icon">🔗</div>
+          <div>
+            <h4>Transparent Supply Chain</h4>
+            <p>Full traceability from source to consumer — no hidden steps, no compromises</p>
+          </div>
+        </div>
+        <div class="sustain-hero-card">
+          <div class="card-icon">🤝</div>
+          <div>
+            <h4>Community Investment</h4>
+            <p>Building livelihoods and supporting local communities across the UAE food sector</p>
+          </div>
+        </div>
+        <div class="sustain-hero-card">
+          <div class="card-icon">♻️</div>
+          <div>
+            <h4>Waste Reduction Drive</h4>
+            <p>Minimizing food waste across the supply chain through smart processes and innovation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<!-- IMPACT NUMBERS -->
+<section class="impact-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Measuring What Matters</span>
+      <h2 class="display-md">Our Impact, In Numbers</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item fade-in">
+        <div class="impact-num"><span class="counter" data-target="9" data-suffix="+">9+</span></div>
+        <div class="impact-lbl">Active Brands</div>
+        <div class="impact-desc">Across the full value chain</div>
+      </div>
+      <div class="impact-item fade-in delay-1">
+        <div class="impact-num"><span class="counter" data-target="100" data-suffix="%">100%</span></div>
+        <div class="impact-lbl">Halal Certified</div>
+        <div class="impact-desc">All products & operations</div>
+      </div>
+      <div class="impact-item fade-in delay-2">
+        <div class="impact-num"><span class="counter" data-target="7">7</span></div>
+        <div class="impact-lbl">Emirates Served</div>
+        <div class="impact-desc">Nationwide food access</div>
+      </div>
+      <div class="impact-item fade-in delay-3">
+        <div class="impact-num"><span class="counter" data-target="1000" data-suffix="+">1000+</span></div>
+        <div class="impact-lbl">Clients Served</div>
+        <div class="impact-desc">Hotels, restaurants & homes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY PILLARS -->
+<section class="pillars2" id="pillars">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Framework</span>
+      <h2 class="display-md">Four Pillars of<br/><em style="color:var(--green-light)">Sustainable Action</em></h2>
+      <div class="divider"></div>
+      <p>Our sustainability framework is built around four integrated pillars that guide how we operate, grow, and make a difference.</p>
+    </div>
+    <div class="pillars2-grid">
+      <div class="pillar2-card fade-in">
+        <span class="pillar2-icon">🌱</span>
+        <h3>Environmental Stewardship</h3>
+        <p>We recognise that the food industry is one of the largest contributors to environmental stress. At Eco Choice, we take active steps to reduce our footprint and protect the ecosystems we depend on.</p>
+        <div class="pillar2-actions">
+          <div class="action-item"><div class="action-check">✓</div>Investment in hydroponic & low-water farming techniques</div>
+          <div class="action-item"><div class="action-check">✓</div>Cold chain optimisation to reduce energy consumption</div>
+          <div class="action-item"><div class="action-check">✓</div>Responsible packaging transition across all brands</div>
+          <div class="action-item"><div class="action-check">✓</div>Food waste minimisation at processing & retail levels</div>
+        </div>
+      </div>
+      <div class="pillar2-card fade-in delay-1">
+        <span class="pillar2-icon">🛡️</span>
+        <h3>UAE Food Security</h3>
+        <p>We are deeply invested in strengthening the UAE's food security infrastructure — building local supply chains that are resilient to global disruptions and climate change.</p>
+        <div class="pillar2-actions">
+          <div class="action-item"><div class="action-check">✓</div>Emirate Farms: growing fresh produce locally in the UAE</div>
+          <div class="action-item"><div class="action-check">✓</div>Supporting UAE Vision 2031 food security targets</div>
+          <div class="action-item"><div class="action-check">✓</div>Diversified supplier base to reduce single-source risk</div>
+          <div class="action-item"><div class="action-check">✓</div>Strategic food reserve capability through Al Wholesale</div>
+        </div>
+      </div>
+      <div class="pillar2-card fade-in delay-2">
+        <span class="pillar2-icon">🤝</span>
+        <h3>Community & Social Impact</h3>
+        <p>Our businesses exist because of the communities they serve. We measure success not just in revenue, but in lives improved, livelihoods created, and communities nourished.</p>
+        <div class="pillar2-actions">
+          <div class="action-item"><div class="action-check">✓</div>Employment creation across multiple UAE sectors</div>
+          <div class="action-item"><div class="action-check">✓</div>Supporting small food businesses through Al Wholesale</div>
+          <div class="action-item"><div class="action-check">✓</div>Making nutritious food accessible & affordable</div>
+          <div class="action-item"><div class="action-check">✓</div>Cultural food diversity through our restaurant concepts</div>
+        </div>
+      </div>
+      <div class="pillar2-card fade-in delay-3">
+        <span class="pillar2-icon">💡</span>
+        <h3>Innovation for Good</h3>
+        <p>We believe that the most powerful sustainability tool is innovation — building better systems, smarter processes, and more responsible food businesses that scale without harming the planet.</p>
+        <div class="pillar2-actions">
+          <div class="action-item"><div class="action-check">✓</div>Tech-enabled delivery reducing food transit waste</div>
+          <div class="action-item"><div class="action-check">✓</div>Data-driven demand forecasting to minimise overstock</div>
+          <div class="action-item"><div class="action-check">✓</div>R&D investment in sustainable food processing</div>
+          <div class="action-item"><div class="action-check">✓</div>Scalable food concepts designed for responsible growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDG ALIGNMENT -->
+<section class="sdg-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Global Alignment</span>
+      <h2 class="display-md">UN Sustainable Development<br/><em style="color:var(--gold)">Goals We Champion</em></h2>
+      <div class="divider"></div>
+      <p>Our work aligns with key UN Sustainable Development Goals — guiding our long-term impact strategy.</p>
+    </div>
+    <div class="sdg-grid">
+      <div class="sdg-card fade-in">
+        <div class="sdg-num">SDG 2</div>
+        <div class="sdg-title">ZERO HUNGER</div>
+        <p>Through Al Wholesale, Emirate Farms, and our distribution network, we work to ensure consistent access to nutritious, affordable food across the UAE and support food security at a national level.</p>
+      </div>
+      <div class="sdg-card fade-in delay-1">
+        <div class="sdg-num">SDG 12</div>
+        <div class="sdg-title">RESPONSIBLE CONSUMPTION</div>
+        <p>We design our businesses to minimise food waste, use responsible packaging, and source ingredients through ethical supply chains — making sustainability part of everyday food decisions.</p>
+      </div>
+      <div class="sdg-card fade-in delay-2">
+        <div class="sdg-num">SDG 13</div>
+        <div class="sdg-title">CLIMATE ACTION</div>
+        <p>Emirate Farms invests in climate-adaptive farming that works within the UAE's extreme environment, reducing food miles and building resilience against global climate-driven food supply disruptions.</p>
+      </div>
+      <div class="sdg-card fade-in delay-3">
+        <div class="sdg-num">SDG 8</div>
+        <div class="sdg-title">DECENT WORK & GROWTH</div>
+        <p>Our group provides quality employment across multiple sectors — from farm workers and warehouse staff to chefs and delivery professionals — creating inclusive economic opportunity in the UAE.</p>
+      </div>
+      <div class="sdg-card fade-in delay-4">
+        <div class="sdg-num">SDG 11</div>
+        <div class="sdg-title">SUSTAINABLE CITIES</div>
+        <p>Our restaurant and delivery concepts are designed around urban food access, reducing the burden of food insecurity in dense city environments and making great food reachable for all UAE residents.</p>
+      </div>
+      <div class="sdg-card fade-in delay-5">
+        <div class="sdg-num">SDG 17</div>
+        <div class="sdg-title">PARTNERSHIPS FOR GOALS</div>
+        <p>We actively build partnerships with farmers, suppliers, NGOs, and government bodies to amplify our impact — because transforming food systems requires collaboration at every level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT PROGRESS BARS -->
+<section class="commitment-bar">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Progress</span>
+      <h2 class="display-md">Our Sustainability<br/><em style="color:var(--gold)">Commitments</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="bar-grid fade-in">
+      <div class="bar-item">
+        <div class="bar-label"><span>Halal Certification Coverage</span><strong>100%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:1.0;"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Local UAE Sourcing</span><strong>Growing</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:0.45;"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Responsible Packaging</span><strong>In Progress</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:0.6;"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Cold Chain Efficiency</span><strong>High</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:0.8;"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Food Waste Reduction</span><strong>Committed</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:0.55;"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Carbon Footprint Reduction</span><strong>Roadmap Set</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="--w:0.35;"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:6rem 0;text-align:center;background:var(--dark);position:relative;">
+  <div class="grid-bg"></div>
+  <div class="container fade-in" style="position:relative;z-index:1;">
+    <span class="label-tag">Join the Movement</span>
+    <h2 class="display-md" style="margin:1rem 0;">Building a Greener<br/>Food Future <em style="color:var(--green-light)">Together</em></h2>
+    <p style="color:var(--white-dim);max-width:520px;margin:0 auto 2.5rem;font-size:1rem;">If you share our values and want to partner with a group that puts sustainability at the heart of every business decision, we want to hear from you.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-arrow">Get In Touch</a>
+      <a href="about.html" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+        <p>A UAE-based food innovation hub building scalable, sustainable food systems across the entire value chain.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="#" class="social-link">fb</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Brands</h4>
+        <ul>
+          <li><a href="brands.html#general-trading">Eco Choice Trading</a></li>
+          <li><a href="https://www.alwholesale.ae" target="_blank">Al Wholesale ↗</a></li>
+          <li><a href="https://www.emiratefarms.ae" target="_blank">Emirate Farms ↗</a></li>
+          <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef ↗</a></li>
+          <li><a href="https://www.obites.ae" target="_blank">O'Bites ↗</a></li>
+          <li><a href="https://www.fuego.ae" target="_blank">Fuego ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><span class="icon">📞</span><div><div>(04) 357 0320</div><div>055 240 2196</div></div></div>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Al Qusais Industrial Area 1, Dubai, UAE</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Eco Choice Group of Companies. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// Animate progress bars
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.bar-fill').forEach((fill, i) => {
+        setTimeout(() => fill.classList.add('animate'), i * 150);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+const barGrid = document.querySelector('.bar-grid');
+if (barGrid) barObserver.observe(barGrid);
+</script>
+</body>
+</html>
