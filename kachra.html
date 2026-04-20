@@ -1,0 +1,86 @@
+<style>
+  /* ── ORIGINAL STYLE MAINTAINED WITH LOGO UPGRADE ── */
+  
+  /* Logo ko bada karne ke liye special class */
+  .brand-logo-upgraded {
+    max-height: 250px !important; /* Ab logo kaafi bada dikhega */
+    width: auto !important;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+  }
+
+  /* Section Hover Animation */
+  .bfs:hover .brand-logo-upgraded {
+    transform: scale(1.05); /* Halka sa animation bina kachra kiye */
+  }
+
+  /* List Fix: Original style se clash na kare */
+  .bi-features {
+    list-style: none !important;
+    padding: 0 !important;
+  }
+
+  .bi-features li {
+    position: relative;
+    padding-left: 1.8rem !important;
+    margin-bottom: 0.8rem !important;
+    display: block !important; /* Original line flow maintained */
+  }
+
+  /* Custom Checkmark Icon */
+  .bi-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a7d48b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+</style>
+
+<section class="bfs" id="al-chef" data-cat="food">
+  <div class="container">
+    <div class="bfc fade-in">
+      
+      <div class="bv">
+        <img src="https://ecochoicegroup.com/Alchef.png" 
+             alt="Al Chef Logo" 
+             class="brand-logo-upgraded" />
+        
+        <div style="margin-top: 2rem; text-align: center;">
+          <h3 style="font-family:var(--font-display); font-size: 1.8rem; color: var(--white); margin: 0;">Al Chef</h3>
+          <span style="color: var(--green); font-size: 0.9rem; letter-spacing: 1px; font-weight: 700; text-transform: uppercase;">Premium Halal Meat</span>
+        </div>
+        
+        <a href="https://www.alcheftohome.com" target="_blank" class="visit-link">alcheftohome.com →</a>
+      </div>
+
+      <div class="bi">
+        <span class="since-badge">📅 Since 2023</span>
+        <span class="label-tag">Premium Meat · Factory & D2C Delivery</span>
+        
+        <h2>Al Chef To Home</h2>
+        <span class="tagline">"Marinated to Perfection. Cut for Convenience."</span>
+        
+        <p>Al Chef Factory processes premium Halal meat at our state-of-the-art facility, supplying HORECA and retail markets across the UAE. We deliver expertly marinated, ready-to-cook products through online and offline channels.</p>
+        
+        <ul class="bi-features">
+          <li>State-of-the-art Halal meat processing factory</li>
+          <li>Marinated chicken, lamb, and beef products</li>
+          <li>Slowly cooked & grilled ready-to-eat range</li>
+          <li>Available in major retailers like Carrefour & Nesto</li>
+        </ul>
+
+        <div class="bi-actions">
+          <a href="https://www.alcheftohome.com" target="_blank" class="btn btn-primary btn-arrow">Shop Now</a>
+          <a href="contact.html" class="btn btn-outline">B2B Enquiry</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

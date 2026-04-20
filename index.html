@@ -1,451 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eco Choice Group of Companies — UAE Food Innovation Hub</title>
-  <meta name="description" content="Eco Choice Group is a UAE-based food innovation hub transforming how people eat, cook and trade. From farm to consumer, we build scalable, sustainable food businesses." />
-  <link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--black);
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 50%, rgba(14,51,32,0.7) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 90% 20%, rgba(26,92,56,0.2) 0%, transparent 50%);
-    }
-    .hero-orb {
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,92,56,0.15) 0%, transparent 70%);
-      right: -200px; top: -200px;
-      animation: orb-float 8s ease-in-out infinite;
-    }
-    .hero-orb2 {
-      position: absolute;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,164,90,0.08) 0%, transparent 70%);
-      right: 100px; bottom: 0;
-      animation: orb-float 10s ease-in-out infinite reverse;
-    }
-    @keyframes orb-float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-30px);} }
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Eco Choice Group — Empowering Sustainable Food Security, Every Day</title>
+<meta name="description" content="From UAE Roots, Growing Global Food Security. ECO Choice Group is a UAE-based food innovation hub transforming the way people eat, cook, and trade."/>
+<link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;background:var(--black);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 5% 55%,rgba(28,28,72,.95) 0%,transparent 62%),radial-gradient(ellipse 50% 55% at 95% 10%,rgba(46,97,173,.16) 0%,transparent 55%);}
+.hero-orb-1{position:absolute;width:800px;height:800px;border-radius:50%;right:-240px;top:-240px;background:radial-gradient(circle,rgba(46,97,173,.13) 0%,transparent 68%);animation:orbFloat 9s ease-in-out infinite;}
+.hero-orb-2{position:absolute;width:440px;height:440px;border-radius:50%;right:60px;bottom:-120px;background:radial-gradient(circle,rgba(167,212,139,.08) 0%,transparent 70%);animation:orbFloat 13s ease-in-out infinite reverse;}
+@keyframes orbFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);}}
+.hero-hex{position:absolute;inset:0;opacity:.032;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34z' fill='none' stroke='%232e61ad' stroke-width='1'/%3E%3Cpath d='M28 100L0 84V50l28-16 28 16v34z' fill='none' stroke='%232e61ad' stroke-width='1'/%3E%3C/svg%3E");}
+.hero-content{position:relative;z-index:2;max-width:820px;}
+.hero-ey{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:su .8s .3s forwards;}
+.hero-line{width:36px;height:1.5px;background:var(--green);}
+.hero-ey span{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green);font-weight:700;}
+.hero-tagline-top{font-family:var(--font-body);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-pale);margin-bottom:1.2rem;opacity:0;animation:su .8s .65s forwards;}
+.hero h1{font-family:var(--font-display);font-weight:300;line-height:.97;font-size:clamp(3.5rem,9vw,8.5rem);letter-spacing:-.03em;margin-bottom:1.5rem;opacity:0;animation:su .9s .5s forwards;}
+.hero h1 strong{font-weight:700;display:block;}
+.hero h1 em{font-style:italic;color:var(--green);}
+.hero-desc{font-size:1.05rem;color:var(--white-dim);max-width:520px;line-height:1.78;margin-bottom:2.5rem;opacity:0;animation:su .9s .85s forwards;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:su .8s 1.05s forwards;}
+@keyframes su{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+/* right stats */
+.hero-stats{position:absolute;right:2rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1rem;z-index:2;opacity:0;animation:su .9s 1.3s forwards;}
+.hs{padding:1.1rem 1.5rem;background:rgba(28,28,72,.65);border:1px solid var(--border);border-radius:var(--radius);backdrop-filter:blur(12px);text-align:right;transition:var(--t);}
+.hs:hover{border-color:var(--border-green);}
+.hs .n{font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:var(--green);line-height:1;}
+.hs .l{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white-dim);}
+/* scroll */
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:2;opacity:0;animation:su 1s 1.7s forwards;}
+.hero-scroll span{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--white-dim);}
+.scroll-bar{width:1px;height:36px;background:linear-gradient(to bottom,var(--blue-light),transparent);animation:scrollA 1.8s ease infinite;}
+@keyframes scrollA{0%{transform:scaleY(1);opacity:1;}100%{transform:scaleY(0);opacity:0;transform-origin:top;}}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.3s forwards;
-    }
-    .hero-line { width: 40px; height: 1px; background: var(--gold); }
-    .hero-eyebrow span { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+/* ═══ IMPORT FLOW SECTION ═══ */
+.import-sect{padding:7rem 0;background:var(--navy-deep);position:relative;overflow:hidden;}
+.import-title{text-align:center;margin-bottom:4rem;}
+.import-flow{display:grid;grid-template-columns:1fr 80px 1fr 80px 1fr;gap:0;align-items:center;max-width:1100px;margin:0 auto;}
+.if-box{background:rgba(28,28,72,.6);border:1px solid var(--border-blue);border-radius:var(--radius-xl);padding:2.5rem;text-align:center;}
+.if-arrow{display:flex;align-items:center;justify-content:center;color:var(--green);font-size:1.8rem;}
+/* countries grid */
+.countries-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin-bottom:1.5rem;}
+.ctry{background:rgba(46,97,173,.15);border:1px solid var(--border-blue);border-radius:8px;padding:.45rem .6rem;font-size:.72rem;color:var(--white-dim);text-align:center;transition:var(--t);font-weight:600;}
+.ctry:hover{background:rgba(46,97,173,.35);color:var(--white);border-color:var(--blue-light);}
+.if-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;font-weight:700;}
+.if-icon{font-size:2.8rem;display:block;margin-bottom:1rem;}
+.if-title{font-family:var(--font-display);font-size:1.4rem;color:var(--white);margin-bottom:.6rem;}
+.if-desc{font-size:.8rem;color:var(--white-dim);line-height:1.65;}
+/* consumer bubbles */
+.consumer-bubbles{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1rem;}
+.cb{background:rgba(167,212,139,.1);border:1px solid var(--border-green);border-radius:50px;padding:.4rem .8rem;font-size:.72rem;color:var(--green);text-align:center;font-weight:600;}
+/* ═══ IMPORT FLOW SECTION ENHANCEMENTS ═══ */
+  .if-box {
+    background: rgba(28, 28, 72, 0.6);
+    border: 1px solid var(--border-blue);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    text-align: center;
+    transition: var(--t);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3.5rem, 8vw, 8rem);
-      font-weight: 300;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.5s forwards;
-    }
-    .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero h1 strong { font-weight: 700; display: block; }
+  .if-box:hover {
+    border-color: var(--green);
+    background: rgba(46, 97, 173, 0.1);
+  }
 
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--white-dim);
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.7s forwards;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.9s forwards;
-    }
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 2;
-      opacity: 0;
-      animation: fadeUp 1s 1.5s forwards;
-    }
-    .hero-scroll span { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dim); }
-    .scroll-bar {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scroll-anim 2s ease infinite;
-    }
-    @keyframes scroll-anim { 0%{transform:scaleY(1);opacity:1;} 100%{transform:scaleY(0);opacity:0;transform-origin:top;} }
+  /* Professional SVG Icon Container */
+  .if-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(167, 212, 139, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(167, 212, 139, 0.2);
+  }
 
-    .hero-numbers {
-      position: absolute;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      z-index: 2;
-      opacity: 0;
-      animation: fadeUp 1s 1.2s forwards;
-    }
-    .hero-stat { text-align: right; }
-    .hero-stat .num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; color: var(--white); line-height: 1; }
-    .hero-stat .lbl { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim); margin-top: 0.2rem; }
+  .if-svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--green);
+    stroke-width: 1.5;
+    fill: none;
+  }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+  /* Responsive Flags Grid */
+  .countries-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
 
-    /* ===== MARQUEE STRIP ===== */
-    .marquee-strip {
-      background: var(--green-deep);
-      border-top: 1px solid var(--border-green);
-      border-bottom: 1px solid var(--border-green);
-      padding: 0.9rem 0;
-      overflow: hidden;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 30s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-track span {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--white-dim);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-shrink: 0;
-    }
-    .marquee-track span::after { content: '◆'; color: var(--gold); font-size: 0.5rem; }
-    @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .ctry {
+    background: rgba(46, 97, 173, 0.15);
+    border: 1px solid var(--border-blue);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--white-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: var(--t);
+  }
 
-    /* ===== ABOUT OVERVIEW ===== */
-    .about-overview { padding: 7rem 0; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-    .about-visual {
-      position: relative;
-    }
-    .about-main-img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: var(--radius-lg);
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-    }
-    .about-img-placeholder {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--green-deep) 0%, var(--dark-card) 50%, var(--green-deep) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--border-green);
-    }
-    .about-img-placeholder::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a5c38' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .about-leaf-icon {
-      font-size: 8rem;
-      opacity: 0.3;
-      position: relative;
-      z-index: 1;
-    }
-    .about-floating-badge {
-      position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
-      background: var(--green);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      z-index: 2;
-      border: 3px solid var(--black);
-    }
-    .about-floating-badge .num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; color: var(--white); line-height: 1; }
-    .about-floating-badge .lbl { font-size: 0.7rem; color: rgba(245,245,240,0.7); text-transform: uppercase; letter-spacing: 0.1em; }
+  .ctry:hover {
+    background: var(--green);
+    color: var(--navy-deep);
+    border-color: var(--green);
+  }
 
-    .about-text .label-tag { margin-bottom: 1rem; display: block; }
-    .about-text h2 { color: var(--white); margin-bottom: 1.5rem; }
-    .about-text p { color: var(--white-dim); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1rem; }
-    .about-values {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .value-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.88rem;
-      color: var(--white-dim);
-    }
-    .value-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; }
+  .if-arrow-svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--green);
+    stroke-width: 2;
+    fill: none;
+  }
 
-    /* ===== BRANDS SHOWCASE ===== */
-    .brands-section { padding: 7rem 0; background: var(--dark); }
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .brand-card {
-      background: rgba(17,26,20,0.5);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      transition: var(--transition);
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      position: relative;
-      overflow: hidden;
-    }
-    .brand-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--green), var(--gold));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-    .brand-card:hover::before { transform: scaleX(1); }
-    .brand-card:hover {
-      border-color: rgba(200,164,90,0.3);
-      transform: translateY(-8px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-      background: rgba(17,26,20,0.8);
-    }
-    .brand-logo-wrap {
-      height: 64px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-    .brand-logo-wrap img {
-      max-height: 56px;
-      max-width: 160px;
-      width: auto;
-      object-fit: contain;
-      filter: brightness(1.1) contrast(1.05);
-    }
-    .brand-logo-text {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .brand-card h3 {
-      font-family: var(--font-body);
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.02em;
-    }
-    .brand-card p {
-      font-size: 0.83rem;
-      color: var(--white-dim);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-    .brand-card-tag { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .brand-arrow {
-      position: absolute;
-      top: 1.5rem; right: 1.5rem;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--white-dim);
-      font-size: 0.8rem;
-      transition: var(--transition);
-    }
-    .brand-card:hover .brand-arrow { background: var(--gold); border-color: var(--gold); color: var(--dark); }
-
-    /* FEATURED brand card */
-    .brand-card.featured {
-      grid-column: span 2;
-      background: linear-gradient(135deg, rgba(14,51,32,0.8) 0%, rgba(17,26,20,0.6) 100%);
-      display: grid;
-      grid-template-columns: 1fr auto;
+  /* Mobile Responsiveness */
+  @media(max-width: 1100px) {
+    .import-flow {
+      grid-template-columns: 1fr;
       gap: 2rem;
-      align-items: center;
     }
-    .brand-card.featured:hover { transform: translateY(-8px); }
+    .if-arrow {
+      transform: rotate(90deg);
+      margin: 1rem 0;
+    }
+  }
 
-    /* ===== WHY CHOOSE US ===== */
-    .why-us { padding: 7rem 0; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-top: 4rem;
-    }
-    .why-item {
-      padding: 3rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      transition: var(--transition);
-      position: relative;
-    }
-    .why-item:hover { background: rgba(26,92,56,0.1); }
-    .why-item:nth-child(2n) { border-right: none; }
-    .why-item:nth-last-child(-n+2) { border-bottom: none; }
-    .why-icon {
-      width: 52px; height: 52px;
-      border-radius: 12px;
-      background: rgba(26,92,56,0.2);
-      border: 1px solid var(--border-green);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-    }
-    .why-item h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.7rem; }
-    .why-item p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.7; }
 
-    /* ===== SUSTAINABILITY ===== */
-    .sustainability-section {
-      padding: 7rem 0;
-      background: var(--dark);
-      position: relative;
-      overflow: hidden;
-    }
-    .sustainability-section::before {
-      content: '';
-      position: absolute;
-      top: -200px; left: -200px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(26,92,56,0.12) 0%, transparent 70%);
-    }
-    .sustain-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .sustain-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 2rem 0; }
-    .sustain-pill {
-      background: rgba(26,92,56,0.2);
-      border: 1px solid rgba(26,92,56,0.4);
-      color: #5dbe8a;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-    }
-    .sustain-stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .sustain-stat-card {
-      background: rgba(17,26,20,0.6);
-      border: 1px solid var(--border-green);
-      border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
-      transition: var(--transition);
-    }
-    .sustain-stat-card:hover { border-color: var(--green-light); transform: translateY(-4px); }
-    .sustain-stat-card .num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--green-light); line-height: 1; }
-    .sustain-stat-card .lbl { font-size: 0.8rem; color: var(--white-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
+/* ═══ WHO WE ARE ═══ */
+.about-sect{padding:7rem 0;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.av-box{width:100%;aspect-ratio:4/5;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,rgba(46,97,173,.22) 100%);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.av-box::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(46,97,173,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(46,97,173,.06) 1px,transparent 1px);background-size:40px 40px;}
+.av-globe{font-size:10rem;opacity:.15;position:relative;z-index:1;}
+.av-badge{position:absolute;bottom:-1.8rem;right:-1.5rem;background:var(--blue);border:3px solid var(--black);border-radius:var(--radius);padding:1.2rem 1.6rem;z-index:2;text-align:center;box-shadow:0 20px 48px var(--blue-glow);}
+.av-badge .n{font-family:var(--font-display);font-size:2.4rem;font-weight:300;color:#fff;line-height:1;}
+.av-badge .l{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7);}
+.val-list{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.8rem 0;}
+.vl-item{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--white-dim);}
+.vl-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;}
 
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      padding: 8rem 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(14,51,32,0.6) 0%, transparent 70%);
-    }
-    .cta-section .container { position: relative; z-index: 1; }
-    .cta-section h2 { font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 1.5rem; }
-    .cta-section p { color: var(--white-dim); font-size: 1.1rem; max-width: 520px; margin: 0 auto 2.5rem; }
-    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+/* ═══ BRANDS GRID ═══ */
+.brands-sect{padding:7rem 0;background:var(--navy-deep);}
+.brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem;}
+.bc{background:rgba(28,28,72,.5);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-decoration:none;display:block;position:relative;overflow:hidden;transition:var(--t);}
+.bc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--green));transform:scaleX(0);transition:transform .4s ease;}
+.bc:hover::after{transform:scaleX(1);}
+.bc:hover{border-color:rgba(167,212,139,.28);transform:translateY(-7px);box-shadow:0 28px 60px rgba(0,0,0,.45);}
+.bc-logo{height:56px;display:flex;align-items:center;margin-bottom:1.3rem;}
+.bc-logo img{max-height:48px;max-width:150px;object-fit:contain;filter:brightness(1.05);}
+.bc-logo-text{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--white);}
+.bc h3{font-family:var(--font-body);font-size:.86rem;font-weight:700;color:var(--white);margin-bottom:.42rem;}
+.bc p{font-size:.78rem;color:var(--white-dim);line-height:1.62;margin-bottom:1rem;}
+.bc-arr{position:absolute;top:1.4rem;right:1.4rem;width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:.72rem;transition:var(--t);}
+.bc:hover .bc-arr{background:var(--green);border-color:var(--green);color:var(--navy-deep);}
+.bc.featured{grid-column:span 2;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;background:linear-gradient(135deg,rgba(28,28,72,.85) 0%,rgba(46,97,173,.18) 100%);}
+.since{display:inline-block;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-pale);background:rgba(46,97,173,.15);border:1px solid var(--border-blue);padding:.18rem .6rem;border-radius:50px;margin-bottom:.6rem;}
+.coming-pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(245,203,106,.1);border:1px solid rgba(245,203,106,.25);color:var(--gold);padding:.18rem .65rem;border-radius:50px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;}
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .brands-grid { grid-template-columns: 1fr 1fr; }
-      .brand-card.featured { grid-column: span 2; }
-      .hero-numbers { display: none; }
-    }
-    @media (max-width: 768px) {
-      .about-grid, .sustain-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .brands-grid { grid-template-columns: 1fr; }
-      .brand-card.featured { grid-column: span 1; display: block; }
-      .why-grid { grid-template-columns: 1fr; }
-      .why-item { border-right: none; }
-      .why-item:nth-last-child(1) { border-bottom: none; }
-      .why-item:nth-last-child(2) { border-bottom: 1px solid var(--border); }
-      .sustain-stat-grid { grid-template-columns: 1fr 1fr; }
-      .about-floating-badge { right: 0.5rem; bottom: -1rem; }
-    }
-  </style>
+/* ═══ AI OPERATIONS ═══ */
+.ai-sect{padding:7rem 0;}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.ai-visual{border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,rgba(46,97,173,.25) 100%);border:1px solid var(--border-blue);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.ai-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(46,97,173,.1) 1px,transparent 1px);background-size:24px 24px;}
+.ai-robot{font-size:8rem;position:relative;z-index:1;animation:aiFloat 3s ease-in-out infinite;}
+@keyframes aiFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.ai-feature{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;border-radius:var(--radius);border:1px solid transparent;transition:var(--t);margin-bottom:.8rem;}
+.ai-feature:hover{background:rgba(46,97,173,.1);border-color:var(--border-blue);}
+.ai-f-icon{width:40px;height:40px;border-radius:10px;background:rgba(46,97,173,.2);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.ai-feature h4{font-family:var(--font-body);font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.3rem;}
+.ai-feature p{font-size:.82rem;color:var(--white-dim);line-height:1.65;}
+@keyframes pulse-glow {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+  }
+
+  .ai-visual-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-blue);
+  }
+
+  .ai-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: pulse-glow 6s ease-in-out infinite;
+  }
+
+  /* SVG Icon Styling */
+  .ai-f-icon-svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--green);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+/* ═══ EVENTS ═══ */
+.events-sect{padding:7rem 0;background:var(--navy-deep);}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem;}
+.ev-card{background:rgba(28,28,72,.5);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;transition:var(--t);}
+.ev-card:hover{border-color:var(--border-blue);transform:translateY(-5px);}
+.ev-year{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-pale);font-weight:700;margin-bottom:.5rem;}
+.ev-card h3{font-family:var(--font-body);font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
+.ev-card p{font-size:.8rem;color:var(--white-dim);line-height:1.65;}
+.ev-icon{font-size:2rem;display:block;margin-bottom:.9rem;}
+.award-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,203,106,.1);border:1px solid rgba(245,203,106,.3);color:var(--gold);padding:.3rem .8rem;border-radius:50px;font-size:.68rem;letter-spacing:.08em;font-weight:700;margin-top:.7rem;}
+/* ═══ UPDATED EVENTS STYLING ═══ */
+  .ev-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(167, 212, 139, 0.1);
+    border: 1px solid var(--border-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    transition: var(--t);
+  }
+
+  .ev-card:hover .ev-icon-box {
+    background: var(--green);
+    transform: rotate(-5deg);
+  }
+
+  .ev-card:hover .ev-icon-box svg {
+    stroke: var(--navy-deep);
+  }
+
+  .ev-svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--green);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--t);
+  }
+
+/* ═══ SUSTAINABILITY STRIP ═══ */
+.sustain-strip{padding:7rem 0;}
+.s4-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:3.5rem;}
+.s4{padding:2.2rem 1.6rem;border:1px solid var(--border);border-radius:var(--radius-lg);background:rgba(28,28,72,.35);text-align:center;transition:var(--t);}
+.s4:hover{border-color:var(--border-green);background:rgba(46,97,173,.1);transform:translateY(-5px);}
+.s4 .icon{font-size:2.4rem;display:block;margin-bottom:1rem;}
+.s4 h4{font-family:var(--font-body);font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.55rem;}
+.s4 p{font-size:.79rem;color:var(--white-dim);line-height:1.65;}
+.s4 {
+    position: relative;
+    padding: 2.5rem 1.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(28, 28, 72, 0.35);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .s4:hover {
+    border-color: var(--green);
+    background: rgba(46, 97, 173, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .s4-icon-box {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(167, 212, 139, 0.05);
+    border-radius: 50%;
+    border: 1px solid rgba(167, 212, 139, 0.1);
+    transition: var(--t);
+  }
+
+  .s4:hover .s4-icon-box {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  .s4-svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--green);
+    stroke-width: 1.5;
+    fill: none;
+    transition: var(--t);
+  }
+
+  .s4:hover .s4-svg {
+    stroke: var(--navy-deep);
+  }
+
+/* ═══ WHY US ═══ */
+.why-sect{padding:7rem 0;background:var(--navy-deep);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;margin-top:4rem;}
+.wy{padding:2.8rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:var(--t);}
+.wy:hover{background:rgba(46,97,173,.1);}
+.wy:nth-child(2n){border-right:none;}
+.wy:nth-last-child(-n+2){border-bottom:none;}
+.wy-icon{width:50px;height:50px;border-radius:10px;background:rgba(46,97,173,.2);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.4rem;}
+.wy h3{font-family:var(--font-body);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.6rem;}
+.wy p{font-size:.83rem;color:var(--white-dim);line-height:1.72;}
+/* ═══ WHY US SECTION PREMIUM UPGRADES ═══ */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; /* Better spacing than the 1px border grid */
+    border: none;
+    margin-top: 4rem;
+  }
+
+  .wy {
+    padding: 3rem;
+    background: rgba(28, 28, 72, 0.4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wy:hover {
+    background: rgba(46, 97, 173, 0.15);
+    border-color: var(--green);
+    transform: translateY(-5px);
+  }
+
+  .wy-icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(167, 212, 139, 0.1);
+    border: 1px solid var(--border-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+    transition: var(--t);
+  }
+
+  .wy:hover .wy-icon-box {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  .wy-svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--green);
+    stroke-width: 1.8;
+    fill: none;
+    transition: var(--t);
+  }
+
+  .wy:hover .wy-svg {
+    stroke: var(--navy-deep);
+  }
+
+  @media(max-width: 768px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+/* ═══ CTA ═══ */
+.cta-sect{padding:8rem 0;text-align:center;position:relative;overflow:hidden;}
+.cta-sect::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(28,28,72,.85) 0%,transparent 70%);}
+.cta-sect .container{position:relative;z-index:1;}
+.cta-sect h2{font-size:clamp(2.5rem,5.5vw,5.5rem);margin-bottom:1.4rem;}
+.cta-sect p{color:var(--white-dim);font-size:1.05rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;}
+
+@media(max-width:1100px){
+  .import-flow{grid-template-columns:1fr 60px 1fr 60px 1fr;}
+  .hero-stats{display:none;}
+  .brands-grid{grid-template-columns:1fr 1fr;}
+  .bc.featured{grid-column:span 2;}
+  .s4-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .import-flow{grid-template-columns:1fr;gap:1.5rem;}
+  .if-arrow{transform:rotate(90deg);}
+  .about-grid,.ai-grid{grid-template-columns:1fr;gap:3rem;}
+  .brands-grid{grid-template-columns:1fr;}
+  .bc.featured{grid-column:span 1;display:block;}
+  .why-grid{grid-template-columns:1fr;}
+  .wy{border-right:none;}
+  .wy:nth-last-child(-n+2){border-bottom:1px solid var(--border);}
+  .wy:last-child{border-bottom:none;}
+  .events-grid{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
 
-<!-- PAGE LOADER -->
+<!-- LOADER -->
 <div class="loader">
-  <div class="loader-logo">
-    <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+  <div class="loader-inner">
+    <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="ECG" onerror="this.style.display='none'"/>
+    <p>Eco Choice Group</p>
   </div>
   <div class="loader-bar"></div>
 </div>
@@ -454,11 +432,8 @@
 <nav class="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
-      <div class="nav-logo-text">
-        Eco Choice Group
-        <span>of Companies</span>
-      </div>
+      <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="ECG" onerror="this.style.display='none'"/>
+      <div class="nav-logo-text">Eco Choice Group<span>of Companies · UAE</span></div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -468,117 +443,120 @@
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu">
-  <button class="mobile-close">✕</button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="brands.html">Our Brands</a>
-  <a href="services.html">Services</a>
-  <a href="sustainability.html">Sustainability</a>
-  <a href="contact.html">Contact</a>
+<div class="mobile-menu"><button class="mobile-close">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="brands.html">Our Brands</a>
+  <a href="services.html">Services</a><a href="sustainability.html">Sustainability</a><a href="contact.html">Contact</a>
 </div>
 
-<!-- ===== HERO ===== -->
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <div class="grid-bg"></div>
-  <div class="hero-orb"></div>
-  <div class="hero-orb2"></div>
+  <div class="hero-hex"></div>
+  <div class="hero-orb-1"></div><div class="hero-orb-2"></div>
   <div class="container hero-content">
-    <div class="hero-eyebrow">
-      <div class="hero-line"></div>
-      <span>UAE Food Innovation Hub</span>
-    </div>
+    <div class="hero-ey"><div class="hero-line"></div><span>UAE Food Innovation Hub · Est. 2018</span></div>
+    <div class="hero-tagline-top">From UAE Roots, Growing Global Food Security</div>
     <h1>
-      Feeding<br/>
-      <em>Tomorrow's</em><br/>
-      <strong>UAE</strong>
+      <em>Empowering</em><br/>
+      Sustainable<br/>
+      <strong>Food Security,<br/>Every Day</strong>
     </h1>
-    <p class="hero-desc">
-      From farm to fork — we build scalable, future-ready food businesses that transform the way people eat, cook, and trade across the Emirates and beyond.
-    </p>
+    <p class="hero-desc">ECO Choice Group builds scalable, transparent, and sustainable food businesses that reimagine the value chain from field to fork — serving the UAE's growing appetite for quality, convenience, and trust.</p>
     <div class="hero-actions">
       <a href="brands.html" class="btn btn-primary btn-arrow">Explore Our Brands</a>
       <a href="about.html" class="btn btn-outline">Our Story</a>
     </div>
   </div>
-  <div class="hero-numbers">
-    <div class="hero-stat">
-      <div class="num"><span class="counter" data-target="9" data-suffix="+">9+</span></div>
-      <div class="lbl">Brands</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num"><span class="counter" data-target="100" data-suffix="+">100+</span></div>
-      <div class="lbl">Products</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num"><span class="counter" data-target="7">7</span></div>
-      <div class="lbl">Emirates</div>
-    </div>
+  <div class="hero-stats">
+    <div class="hs"><div class="n"><span class="counter" data-target="9" data-suffix="+">9+</span></div><div class="l">Active Brands</div></div>
+    <div class="hs"><div class="n"><span class="counter" data-target="22">22</span></div><div class="l">Vehicle Fleet</div></div>
+    <div class="hs"><div class="n"><span class="counter" data-target="11">11</span></div><div class="l">Import Countries</div></div>
+    <div class="hs"><div class="n">100%</div><div class="l">Halal Certified</div></div>
   </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-bar"></div>
-  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
 </section>
 
-<!-- MARQUEE STRIP -->
+<!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-track">
-    <span>Eco Choice General Trading</span>
-    <span>Al Wholesale</span>
-    <span>Go-si</span>
-    <span>Emirate Farms</span>
-    <span>Eco Choice Meat Products</span>
-    <span>Al Chef</span>
-    <span>Meat &amp; Bites Restaurant</span>
-    <span>O'Bites</span>
-    <span>Fuego</span>
-    <!-- duplicate for seamless loop -->
-    <span>Eco Choice General Trading</span>
-    <span>Al Wholesale</span>
-    <span>Go-si</span>
-    <span>Emirate Farms</span>
-    <span>Eco Choice Meat Products</span>
-    <span>Al Chef</span>
-    <span>Meat &amp; Bites Restaurant</span>
-    <span>O'Bites</span>
-    <span>Fuego</span>
+    <span>Eco Choice General Trading</span><span>Al Wholesale</span><span>Go-si Vilcagua</span>
+    <span>Emirate Farms</span><span>ECG Meat Products</span><span>Al Chef To Home</span>
+    <span>O'Bites</span><span>Fuego Beyond Mex Tex</span><span>Gulf Food 2025</span>
+    <span>Emirates Culinary Guild</span><span>Expo Culinaire</span><span>Taste Award Brussels 2024</span>
+    <span>Eco Choice General Trading</span><span>Al Wholesale</span><span>Go-si Vilcagua</span>
+    <span>Emirate Farms</span><span>ECG Meat Products</span><span>Al Chef To Home</span>
+    <span>O'Bites</span><span>Fuego Beyond Mex Tex</span><span>Gulf Food 2025</span>
   </div>
 </div>
 
-<!-- ===== ABOUT OVERVIEW ===== -->
-<section class="about-overview">
+<!-- ═══════════ IMPORT FLOW ═══════════ -->
+<section class="import-sect">
+  <div class="grid-bg"></div>
   <div class="container">
-    <div class="about-grid">
-      <div class="about-visual fade-in-left">
-        <div class="about-img-placeholder">
-          <div class="about-leaf-icon">🌿</div>
+    <div class="import-title fade-in">
+      <span class="label-tag">Our Global Supply Chain</span>
+      <h2 class="display-md" style="margin-top:.8rem;">Empowering Sustainable<br/><em style="color:var(--green)">Food Security, Every Day</em></h2>
+      <div class="divider"></div>
+      <p style="color:var(--white-dim);max-width:600px;margin:0 auto;font-size:.97rem;line-height:1.75;">We import from multiple sources across the globe to guarantee quality, freshness, and consistency — then process and deliver to every consumer in the UAE.</p>
+    </div>
+
+    <div class="import-flow fade-in">
+      <div class="if-box">
+        <div class="if-label">Import Sources</div>
+        <div class="if-icon-wrapper">
+          <svg class="if-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
         </div>
-        <div class="about-floating-badge">
-          <div class="num">2018</div>
-          <div class="lbl">Est. in UAE</div>
+        <div class="if-title">Al Wholesale</div>
+        <div class="countries-wrap">
+          <div class="ctry">🇷🇺 Russia</div>
+          <div class="ctry">🇦🇺 Australia</div>
+          <div class="ctry">🇺🇸 USA</div>
+          <div class="ctry">🇧🇷 Brazil</div>
+          <div class="ctry">🇦🇿 Azerbaijan</div>
+          <div class="ctry">🇹🇷 Turkey</div>
+          <div class="ctry">🇪🇸 Spain</div>
+          <div class="ctry">🇮🇳 India</div>
+          <div class="ctry">🇺🇦 Ukraine</div>
+          <div class="ctry">🇪🇨 Ecuador</div>
+          <div class="ctry">🇪🇬 Egypt</div>
+          <div class="ctry">🇨🇳 China</div>
         </div>
+        <p class="if-desc">Dynamic online B2B platform · 22-vehicle fleet · Real-time pricing charts</p>
       </div>
-      <div class="about-text fade-in-right">
-        <span class="label-tag">Who We Are</span>
-        <h2 class="display-md">Reimagining<br/>Food from<br/><em style="color:var(--gold)">Field to Fork</em></h2>
-        <div class="divider divider-left"></div>
-        <p>Eco Choice Group is a UAE-based food innovation hub committed to transforming the way people eat, cook, and trade. We actively support food security by strengthening local and climate-resilient food systems.</p>
-        <p>We're not just creating food businesses — we're building scalable concepts that reimagine the entire value chain through efficient, transparent, and sustainable systems.</p>
-        <div class="about-values">
-          <div class="value-item"><div class="value-dot"></div>Sustainability</div>
-          <div class="value-item"><div class="value-dot"></div>Innovation</div>
-          <div class="value-item"><div class="value-dot"></div>Authenticity</div>
-          <div class="value-item"><div class="value-dot"></div>Community Impact</div>
+
+      <div class="if-arrow">
+        <svg class="if-arrow-svg" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </div>
+
+      <div class="if-box">
+        <div class="if-label">Processing</div>
+        <div class="if-icon-wrapper">
+          <svg class="if-svg" viewBox="0 0 24 24"><path d="M2 20V9l4-2 4 2 4-2 4 2 4-2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"></path><path d="M9 17h1M9 13h1M14 17h1M14 13h1"></path></svg>
         </div>
-        <a href="about.html" class="btn btn-primary btn-arrow">Discover Our Story</a>
+        <div class="if-title">Al Chef Factory</div>
+        <div class="if-desc">State-of-the-art Halal certified processing facility · Premium meat products · Custom marination · Value-added packaging</div>
+      </div>
+
+      <div class="if-arrow">
+        <svg class="if-arrow-svg" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </div>
+
+      <div class="if-box">
+        <div class="if-label">Consumers</div>
+        <div class="if-icon-wrapper">
+          <svg class="if-svg" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+        </div>
+        <div class="if-title">To Every Table</div>
+        <div class="consumer-bubbles">
+          <div class="cb">HORECA</div>
+          <div class="cb">Retailers</div>
+          <div class="cb">Al Chef Home</div>
+          <div class="cb">O'Bites</div>
+          <div class="cb">Fuego</div>
+          <div class="cb">Institutions</div>
+        </div>
       </div>
     </div>
   </div>
@@ -586,261 +564,405 @@
 
 <div class="glow-line"></div>
 
-<!-- ===== BRANDS SHOWCASE ===== -->
-<section class="brands-section">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="label-tag">Our Portfolio</span>
-      <h2 class="display-md">Nine Brands.<br/>One Vision.</h2>
-      <div class="divider"></div>
-      <p>A carefully curated ecosystem of food businesses spanning trading, farming, distribution, and dining — all under one group.</p>
-    </div>
-    <div class="brands-grid">
-
-      <!-- Eco Choice General Trading (Featured) -->
-      <a href="brands.html#general-trading" class="brand-card featured tilt-card fade-in">
-        <div>
-          <div class="brand-logo-wrap">
-            <div class="brand-logo-text">Eco Choice</div>
-          </div>
-          <span class="tag-pill">General Trading</span>
-          <h3 style="margin-top:0.8rem;">Eco Choice General Trading LLC</h3>
-          <p>The backbone of the group — a premier food trading company sourcing and supplying high-quality food products across the UAE. Operating across FMCG, bulk commodities, and specialty food categories.</p>
-          <div class="brand-card-tag">
-            <span class="tag-pill-green">B2B Supply</span>
-            <span class="tag-pill-green">FMCG</span>
-            <span class="tag-pill-green">Bulk Trade</span>
-          </div>
-        </div>
-        <div class="brand-arrow">→</div>
-      </a>
-
-      <!-- Al Wholesale -->
-      <a href="brands.html#al-wholesale" class="brand-card tilt-card fade-in delay-1">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/Al%20wholesale.png" alt="Al Wholesale" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.3rem;color:var(--white)\'>Al Wholesale</span>'" />
-        </div>
-        <h3>Al Wholesale</h3>
-        <p>UAE's trusted B2B food wholesale platform connecting suppliers with restaurants, hotels, and retailers at scale.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">alwholesale.ae</span>
-        </div>
-      </a>
-
-      <!-- Go-si -->
-      <a href="brands.html#go-si" class="brand-card tilt-card fade-in delay-2">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/Go-si.png" alt="Go-si" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.5rem;color:var(--white)\'>Go-si</span>'" />
-        </div>
-        <h3>Go-si</h3>
-        <p>A tech-enabled food delivery and subscription platform bringing fresh, healthy, convenient meals to UAE consumers.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">go-si.com</span>
-        </div>
-      </a>
-
-      <!-- Emirate Farms -->
-      <a href="brands.html#emirate-farms" class="brand-card tilt-card fade-in delay-3">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/Emirate%20Farms.png" alt="Emirate Farms" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.2rem;color:var(--white)\'>Emirate Farms</span>'" />
-        </div>
-        <h3>Emirate Farms</h3>
-        <p>Supporting local food sovereignty through climate-resilient farming and direct-to-consumer fresh produce supply.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">emiratefarms.ae</span>
-        </div>
-      </a>
-
-      <!-- Eco Choice Meat Products -->
-      <a href="brands.html#meat-products" class="brand-card tilt-card fade-in delay-1">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <div class="brand-logo-text" style="font-size:1.1rem;">ECG Meat</div>
-        </div>
-        <h3>Eco Choice Meat Products LLC</h3>
-        <p>Premium Halal meat processing and distribution — delivering quality from source to shelf across the UAE.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill-green">Halal Certified</span>
-          <span class="tag-pill-green">Premium</span>
-        </div>
-      </a>
-
-      <!-- Al Chef -->
-      <a href="brands.html#al-chef" class="brand-card tilt-card fade-in delay-2">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/Alchef.png" alt="Al Chef" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.3rem;color:var(--white)\'>Al Chef</span>'" />
-        </div>
-        <h3>Al Chef To Home</h3>
-        <p>Premium marinated, ready-to-cook, and slow-roasted meats delivered fresh to your door across Dubai and UAE.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">alcheftohome.com</span>
-        </div>
-      </a>
-
-      <!-- Meat & Bites -->
-      <a href="brands.html#meat-bites" class="brand-card tilt-card fade-in delay-3">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <div class="brand-logo-text" style="font-size:1.1rem;">Meat &amp; Bites</div>
-        </div>
-        <h3>Meat &amp; Bites Restaurant LLC</h3>
-        <p>A premium restaurant concept celebrating the art of fire-cooked meats with an immersive dining experience.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill-green">Dine In</span>
-          <span class="tag-pill-green">Premium Cuts</span>
-        </div>
-      </a>
-
-      <!-- O'Bites -->
-      <a href="brands.html#obites" class="brand-card tilt-card fade-in delay-4">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/O'Bites.png" alt="O'Bites" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.5rem;color:var(--white)\'>O\'Bites</span>'" />
-        </div>
-        <h3>O'Bites</h3>
-        <p>United in flavour — O-shaped handcrafted bites blending global tastes with UAE vibes at Deira City Centre.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">obites.ae</span>
-        </div>
-      </a>
-
-      <!-- Fuego -->
-      <a href="brands.html#fuego" class="brand-card tilt-card fade-in delay-5">
-        <div class="brand-arrow">→</div>
-        <div class="brand-logo-wrap">
-          <img src="https://ecochoicegroup.com/Fuego.png" alt="Fuego" onerror="this.innerHTML='<span style=\'font-family:var(--font-display);font-size:1.5rem;color:var(--gold)\'>Fuego 🔥</span>'" />
-        </div>
-        <h3>Fuego</h3>
-        <p>Bold, fire-inspired flavours in an energetic QSR format — where the heat is always on and every bite ignites.</p>
-        <div class="brand-card-tag">
-          <span class="tag-pill">fuego.ae</span>
-        </div>
-      </a>
-
-    </div>
-    <div style="text-align:center;margin-top:3rem;" class="fade-in">
-      <a href="brands.html" class="btn btn-outline btn-arrow">View All Brands</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHY CHOOSE US ===== -->
-<section class="why-us">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="label-tag">Why Eco Choice</span>
-      <h2 class="display-md">Built Different.<br/>Built for UAE.</h2>
-      <div class="divider"></div>
-      <p>We operate at every layer of the food value chain — giving us a unique advantage in quality, speed, and sustainability.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-item fade-in">
-        <div class="why-icon">🌾</div>
-        <h3>Farm to Fork Control</h3>
-        <p>We own and operate across the entire food supply chain — from sourcing and farming to processing, distribution, and restaurant concepts. This end-to-end control ensures unmatched quality and transparency.</p>
-      </div>
-      <div class="why-item fade-in delay-1">
-        <div class="why-icon">🏆</div>
-        <h3>Premium Halal Standards</h3>
-        <p>Every product across our brands meets the highest Halal certification standards, ensuring confidence and trust for all our customers, partners, and communities in the UAE and beyond.</p>
-      </div>
-      <div class="why-item fade-in delay-2">
-        <div class="why-icon">🚀</div>
-        <h3>Innovation-First Culture</h3>
-        <p>From tech-enabled delivery platforms to creative food concepts, we constantly push boundaries. Our brands are built to scale and adapt to evolving consumer behaviors and market trends.</p>
-      </div>
-      <div class="why-item fade-in delay-3">
-        <div class="why-icon">🌍</div>
-        <h3>UAE Food Security Mission</h3>
-        <p>We're deeply committed to strengthening the UAE's food security by investing in local farming, climate-resilient food systems, and establishing sustainable regional supply networks.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SUSTAINABILITY ===== -->
-<section class="sustainability-section">
-  <div class="container">
-    <div class="sustain-grid">
-      <div class="fade-in-left">
-        <span class="label-tag">Our Commitment</span>
-        <h2 class="display-md" style="margin:1rem 0;">Sustainability<br/>at the<br/><em style="color:var(--green-light)">Core</em></h2>
-        <div class="divider divider-left"></div>
-        <p style="color:var(--white-dim);line-height:1.8;margin-bottom:1.5rem;">Eco Choice Group embeds sustainability into every decision — from sourcing responsibly grown ingredients to minimising packaging waste, and supporting climate-resilient agriculture across the region.</p>
-        <p style="color:var(--white-dim);line-height:1.8;margin-bottom:2rem;">Our commitment extends beyond profit — we measure success by the positive impact we leave on communities, ecosystems, and the food systems of tomorrow.</p>
-        <div class="sustain-pills">
-          <span class="sustain-pill">Climate-Resilient Farming</span>
-          <span class="sustain-pill">Responsible Sourcing</span>
-          <span class="sustain-pill">Zero-Waste Drive</span>
-          <span class="sustain-pill">Community First</span>
-          <span class="sustain-pill">Local Food Systems</span>
-        </div>
-        <a href="sustainability.html" class="btn btn-primary btn-arrow">Our Impact Story</a>
-      </div>
-      <div class="sustain-stat-grid fade-in-right">
-        <div class="sustain-stat-card">
-          <div class="num"><span class="counter" data-target="9" data-suffix="+">9+</span></div>
-          <div class="lbl">Active Brands</div>
-        </div>
-        <div class="sustain-stat-card">
-          <div class="num"><span class="counter" data-target="100" data-suffix="%">100%</span></div>
-          <div class="lbl">Halal Certified</div>
-        </div>
-        <div class="sustain-stat-card">
-          <div class="num"><span class="counter" data-target="7">7</span></div>
-          <div class="lbl">Emirates Served</div>
-        </div>
-        <div class="sustain-stat-card">
-          <div class="num"><span class="counter" data-target="2018">2018</span></div>
-          <div class="lbl">Est. in UAE</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="cta-section">
+<!-- ═══════════ WHO WE ARE ═══════════ -->
+<section class="about-sect">
   <div class="grid-bg"></div>
   <div class="container">
-    <div class="fade-in">
-      <span class="label-tag">Get In Touch</span>
-      <h2 class="display-lg" style="margin-top:1rem;">Ready to Partner<br/>with <em style="color:var(--gold)">Eco Choice?</em></h2>
-      <p>Whether you're looking for B2B partnerships, investment opportunities, or want to explore our brands — we'd love to connect.</p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold btn-arrow">Start a Conversation</a>
-        <a href="brands.html" class="btn btn-outline">Explore Brands</a>
+    <div class="about-grid">
+      <div class="fade-in-left" style="position:relative;">
+        <div class="av-box" style="border-radius: 24px; overflow: hidden; background: none; border: 1px solid var(--border-blue);">
+          <div class="av-globe" style="width: 100%; height: 100%; opacity: 1;">
+            <img 
+              src="Ecochoicegroupt.jpg" 
+              alt="Eco Choice Group Business Tree"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+            />
+          </div>
+        </div>
+        <div class="av-badge"><div class="n">2018</div><div class="l">Founded UAE</div></div>
+      </div>
+      <div class="fade-in-right">
+        <span class="label-tag">Who We Are</span>
+        <h2 class="display-md" style="margin:1rem 0;">A UAE Food<br/>Innovation <em style="color:var(--green)">Hub</em></h2>
+        <div class="divider divider-left"></div>
+        <p style="color:var(--white-dim);line-height:1.82;margin-bottom:1.2rem;font-size:.97rem;">ECO Choice Group is a UAE-based food innovation hub committed to transforming the way people eat, cook, and trade. We actively support food security by strengthening local and climate-resilient food systems.</p>
+        <p style="color:var(--white-dim);line-height:1.82;margin-bottom:1.5rem;font-size:.97rem;">We import from multiple sources to guarantee quality, freshness, and consistency — building scalable concepts that reimagine the value chain <em style="color:var(--green-mid)">from field to fork.</em></p>
+        <div class="val-list">
+          <div class="vl-item"><div class="vl-dot"></div>Food Security</div>
+          <div class="vl-item"><div class="vl-dot"></div>Integrity</div>
+          <div class="vl-item"><div class="vl-dot"></div>Innovation</div>
+          <div class="vl-item"><div class="vl-dot"></div>Excellence</div>
+          <div class="vl-item"><div class="vl-dot"></div>Sustainability</div>
+          <div class="vl-item"><div class="vl-dot"></div>Community Impact</div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="about.html" class="btn btn-primary btn-arrow">Our Story</a>
+          <a href="services.html" class="btn btn-outline">What We Do</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<div class="glow-line"></div>
+
+<!-- ==== Our Strategic Concepts===== -->
+<section class="brands-sect">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Our Strategic Concepts</span>
+      <h2 class="display-md">Our concepts contribute to a larger<br/><em style="color:var(--green)">food innovation ecosystem</em></h2>
+      <div class="divider"></div>
+      <p>We serve the UAE's growing appetite for quality, convenience, and trust through interconnected solutions.</p>
+    </div>
+
+    <div class="brands-grid">
+      <a href="brands.html#general-trading" class="bc featured tilt-card fade-in">
+        <div>
+          <span class="tag-pill" style="margin-bottom:.8rem;display:inline-block;">Group Flagship</span>
+          <div class="bc-logo-wrapper">
+            <img src="https://ecochoicegroup.com/Eco%20choice%20group-logo.png" alt="Eco Choice Group" class="bc-logo-img" style="max-height: 110px;">
+          </div>
+          <h3>Eco Choice General Trading LLC</h3>
+          <p>The backbone of the group — importing from 12+ countries. Serving HORECA, retail, and institutional buyers across the UAE.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;"><span class="tag-pill-green">Import & Export</span><span class="tag-pill-green">B2B Platform</span></div>
+        </div>
+        <div class="bc-arr">→</div>
+      </a>
+
+      <a href="brands.html#al-wholesale" class="bc tilt-card fade-in delay-1">
+        <div class="bc-arr">→</div>
+        <span class="since">Since 2023</span>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/Al%20wholesale.png" alt="Al Wholesale" class="bc-logo-img">
+        </div>
+        <h3>Al Wholesale</h3>
+        <p>Dynamic B2B platform connecting buyers & sellers with real-time interactive pricing charts.</p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">alwholesale.ae</span></div>
+      </a>
+
+      <a href="brands.html#al-chef" class="bc tilt-card fade-in delay-2">
+        <div class="bc-arr">→</div>
+        <span class="since">Since 2023</span>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/Al%20chef.png" alt="Al Chef" class="bc-logo-img">
+        </div>
+        <h3>Al Chef To Home</h3>
+        <p>ECO CHOICE MEAT PRODUCTS LLC — premium marinated Halal meats for retailers and homes.</p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">alcheftohome.com</span></div>
+      </a>
+
+      <a href="brands.html#emirate-farms" class="bc tilt-card fade-in delay-3">
+        <div class="bc-arr">→</div>
+        <span class="since">Since 2024</span>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/Emirate%20Farms.png" alt="Emirate Farms" class="bc-logo-img">
+        </div>
+        <h3>Emirate Farms</h3>
+        <p>Locally sourced from Al Ain farms — promoting fresh produce and the UAE food ecosystem.</p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">emiratefarms.ae</span></div>
+      </a>
+
+      <a href="brands.html#obites" class="bc tilt-card fade-in delay-4">
+        <div class="bc-arr">→</div>
+        <span class="since">Since 2024</span>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/O'Bites.png" alt="O'Bites" class="bc-logo-img">
+        </div>
+        <h3>O'Bites · United in Flavour</h3>
+        <p>UAE's First Micro-QSR concept. O-shaped bites ready in 60 seconds. <strong style="color:var(--green);">5.0 ★</strong></p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">obites.ae</span></div>
+      </a>
+
+      <a href="brands.html#go-si" class="bc tilt-card fade-in delay-1">
+        <div class="bc-arr">→</div>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/Go-si.png" alt="Go-si" class="bc-logo-img">
+        </div>
+        <h3>Go-si · Vilcagua</h3>
+        <p>Natural artesian mineral water. <span style="color:var(--gold);font-weight:700;">Superior Taste Award 2024</span></p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">go-si.com</span></div>
+      </a>
+
+      <a href="brands.html#fuego" class="bc tilt-card fade-in delay-5">
+        <div class="bc-arr">→</div>
+        <div class="bc-logo-wrapper">
+          <img src="https://ecochoicegroup.com/Fuego.png" alt="Fuego" class="bc-logo-img">
+        </div>
+        <h3>Fuego · Beyond Mex Tex</h3>
+        <p>Exclusive Private Dining. Where Mex meets Tex and Flavour Goes Beyond.</p>
+        <div style="display:flex;gap:.5rem;"><span class="tag-pill">fuego.ae</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ═══════════ AI-DRIVEN OPERATIONS ═══════════ -->
+<section class="ai-sect">
+  <div class="grid-bg"></div>
+  <div class="container">
+    <div class="ai-grid">
+      <div class="ai-visual fade-in-left">
+        <div class="ai-visual-wrapper">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" 
+               alt="AI Neural Interface" 
+               class="ai-main-img" />
+        </div>
+      </div>
+      
+      <div class="fade-in-right">
+        <span class="label-tag">Technology & Innovation</span>
+        <h2 class="display-md" style="margin:1rem 0;">AI-Driven <em style="color:var(--green)">Operations</em></h2>
+        <div class="divider divider-left"></div>
+        <p style="color:var(--white-dim);line-height:1.82;margin-bottom:2rem;font-size:.95rem;">
+          We leverage Artificial Intelligence across our digital ecosystem — enhancing website performance, powering social media strategies, and streamlining technical processes for smarter, faster outcomes.
+        </p>
+
+        <div class="ai-feature">
+          <div class="ai-f-icon">
+            <svg class="ai-f-icon-svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4>Digital Ecosystem Enhancement</h4>
+            <p>AI-powered website performance, social media strategies, and continuous digital innovation.</p>
+          </div>
+        </div>
+
+        <div class="ai-feature">
+          <div class="ai-f-icon">
+            <svg class="ai-f-icon-svg" viewBox="0 0 24 24">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4>Technical Operations</h4>
+            <p>AI-assisted automation and predictive insights for faster and more accurate business outcomes.</p>
+          </div>
+        </div>
+
+        <div class="ai-feature">
+          <div class="ai-f-icon">
+            <svg class="ai-f-icon-svg" viewBox="0 0 24 24">
+              <path d="M11 10a4 4 0 1 0 0 8"></path>
+              <path d="m15 10 .5 5"></path>
+              <path d="m19 10 1 5"></path>
+              <path d="M2 18h11"></path>
+              <path d="M22 18h-1"></path>
+              <path d="M7 10h11a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+            </svg>
+          </div>
+          <div>
+            <h4>Sustainable Production</h4>
+            <p>AI-driven systems at ECG Meat Products LLC optimize energy use and reduce waste.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+
+<!-- ═══════════ EVENTS & EXHIBITIONS ═══════════ -->
+<section class="events-sect">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Industry Presence</span>
+      <h2 class="display-md">Participation in Events<br/><em style="color:var(--green)">&amp; Exhibitions</em></h2>
+      <div class="divider"></div>
+      <p>ECO Choice Group actively participates in the UAE and global food industry's most prestigious events — showcasing our brands and building the future of food.</p>
+    </div>
+
+    <div class="events-grid">
+      <div class="ev-card fade-in">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+        </div>
+        <div class="ev-year">2024</div>
+        <h3>Expo Culinaire 2024</h3>
+        <p>Showcased Al Chef and Al Wholesale at Expo Culinaire — presenting our premium Halal meat products and wholesale platform to HORECA decision-makers.</p>
+      </div>
+
+      <div class="ev-card fade-in delay-1">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><path d="M12 2v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="M2 12h2"></path><path d="m4.93 19.07 1.41-1.41"></path><path d="M12 20v2"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M20 12h2"></path><path d="m17.66 6.34 1.41-1.41"></path><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"></path></svg>
+        </div>
+        <div class="ev-year">2025</div>
+        <h3>Expo Culinaire 2025</h3>
+        <p>Returned with an expanded presence — featuring our full brand portfolio and strengthening relationships with the UAE's top chefs and food procurement teams.</p>
+      </div>
+
+      <div class="ev-card fade-in delay-2">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div class="ev-year">2025</div>
+        <h3>Gulf Food 2025</h3>
+        <p>Exhibited at the world's largest food trade exhibition — representing Eco Choice Group's vision for sustainable food security on the global stage.</p>
+      </div>
+
+      <div class="ev-card fade-in delay-3">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><path d="M6 8v1"></path><path d="M18 8v1"></path><path d="M6 14v4"></path><path d="M18 14v4"></path><path d="M12 2v16"></path><path d="M8 18h8"></path></svg>
+        </div>
+        <div class="ev-year">2025</div>
+        <h3>Chef Uwe · Product Trial</h3>
+        <p>Renowned Chef Uwe endorsed Al Chef products in 2025 — a testament to our premium quality standards and the trust of UAE's culinary professionals.</p>
+      </div>
+
+      <div class="ev-card fade-in delay-4">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><path d="M12 15V3"></path><path d="m9 6 3-3 3 3"></path><path d="M18 15V3"></path><path d="m15 18 3 3 3-3"></path><path d="M6 15V3"></path><path d="m3 18 3 3 3-3"></path></svg>
+        </div>
+        <div class="ev-year">May 2025</div>
+        <h3>Emirates Culinary Guild</h3>
+        <p>Received membership certification recognizing our excellence in the food industry from the prestigious Emirates Culinary Guild.</p>
+        <div class="award-badge">ECG Magazine Feature 2025</div>
+      </div>
+
+      <div class="ev-card fade-in delay-5">
+        <div class="ev-icon-box">
+          <svg class="ev-svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"></path></svg>
+        </div>
+        <div class="ev-year">Brussels · 2024</div>
+        <h3>Go-si Superior Taste Award</h3>
+        <p>Go-si (Vilcagua) received the Superior Taste Award in Brussels 2024 — a 2-star recognition affirming its exceptional global quality.</p>
+        <div class="award-badge">Superior Taste Award · Brussels 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════ SUSTAINABILITY ═══════════ -->
+<section class="sustain-strip">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Core Values</span>
+      <h2 class="display-md">Partnering with Nature &amp;<br/><em style="color:var(--green)">Community for Long-Term Value</em></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="s4-grid">
+      <div class="s4 fade-in">
+        <div class="s4-icon-box">
+          <svg class="s4-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h4>Food Security</h4>
+        <p>Ensuring stable, sustainable access to nutritious food across every community we serve in the UAE.</p>
+      </div>
+
+      <div class="s4 fade-in delay-1">
+        <div class="s4-icon-box">
+          <svg class="s4-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <h4>Integrity</h4>
+        <p>Building trust through transparency and reliability from our supply chain to your table.</p>
+      </div>
+
+      <div class="s4 fade-in delay-2">
+        <div class="s4-icon-box">
+          <svg class="s4-svg" viewBox="0 0 24 24"><path d="M12 2v8"></path><path d="m4.93 10.93 1.41 1.41"></path><path d="M2 18h2"></path><path d="M20 18h2"></path><path d="m19.07 10.93-1.41 1.41"></path><path d="M22 22H2"></path><path d="m8 22 4-10 4 10"></path></svg>
+        </div>
+        <h4>Innovation</h4>
+        <p>Reimagining the ordinary with scalable ideas — from AI operations to Micro-QSR concepts.</p>
+      </div>
+
+      <div class="s4 fade-in delay-3">
+        <div class="s4-icon-box">
+          <svg class="s4-svg" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C10.9 14.36 12 11 12 11s1.1 3.36 4.92 4c3.23.64 5.08 3 5.08 6"></path></svg>
+        </div>
+        <h4>Sustainability</h4>
+        <p>Responsible sourcing and minimal waste operations for long-term community value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-line"></div>
+<!-- ═══════════ WHY CHOOSE US ═══════════ -->
+<section class="why-sect">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label-tag">Why Eco Choice Group</span>
+      <h2 class="display-md">Built Different.<br/><em style="color:var(--green)">Built for UAE.</em></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="why-grid">
+      <div class="wy fade-in">
+        <div class="wy-icon-box">
+          <svg class="wy-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3>12+ Country Import Network</h3>
+        <p>We import from major global markets including Russia, USA, and Australia — a multi-source strategy guaranteeing consistent quality and pricing.</p>
+      </div>
+
+      <div class="wy fade-in delay-1">
+        <div class="wy-icon-box">
+          <svg class="wy-svg" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
+        <h3>22-Vehicle Delivery Fleet</h3>
+        <p>Our dedicated fleet ensures fast, temperature-controlled deliveries across all 7 Emirates with full B2B transparency.</p>
+      </div>
+
+      <div class="wy fade-in delay-2">
+        <div class="wy-icon-box">
+          <svg class="wy-svg" viewBox="0 0 24 24"><path d="M12 8V4H8"></path><rect x="8" y="8" width="8" height="8" rx="2"></rect><path d="M16 12h4v4"></path><path d="M12 16v4h4"></path><path d="M8 12H4v-4h4"></path></svg>
+        </div>
+        <h3>AI-Driven Smart Operations</h3>
+        <p>AI powers our digital ecosystem and production optimization — delivering smarter customer experiences and reducing food waste.</p>
+      </div>
+
+      <div class="wy fade-in delay-3">
+        <div class="wy-icon-box">
+          <svg class="wy-svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+        </div>
+        <h3>Industry-Recognized Quality</h3>
+        <p>Award-winning brands and high-level culinary endorsements — quality that global industry leaders and chefs trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta-sect">
+  <div class="grid-bg"></div>
+  <div class="container fade-in">
+    <span class="label-tag">Partner With Us</span>
+    <h2 class="display-lg" style="margin:1rem 0;">Ready to <em style="color:var(--green)">Partner</em><br/>with Eco Choice?</h2>
+    <p>Whether you're looking for B2B wholesale, food supply, restaurant partnerships, or investment — we are your UAE food ecosystem partner.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-green btn-arrow">Start a Conversation</a>
+      <a href="brands.html" class="btn btn-outline">Explore Brands</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
-        <p>A UAE-based food innovation hub transforming the way people eat, cook, and trade. Building scalable, sustainable food systems from field to fork.</p>
+        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="ECG" onerror="this.style.display='none'"/>
+        <div class="footer-tagline">"From UAE Roots, Growing Global Food Security"</div>
+        <p>A UAE-based food innovation hub committed to transforming the way people eat, cook, and trade — from field to fork, every day.</p>
         <div class="social-links" style="margin-top:1.5rem;">
-          <a href="#" class="social-link">in</a>
-          <a href="#" class="social-link">ig</a>
-          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="Instagram">ig</a>
+          <a href="#" class="social-link" title="Facebook">fb</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Our Brands</h4>
         <ul>
-          <li><a href="brands.html#general-trading">Eco Choice Trading</a></li>
+          <li><a href="brands.html#general-trading">ECG General Trading</a></li>
           <li><a href="https://www.alwholesale.ae" target="_blank">Al Wholesale ↗</a></li>
-          <li><a href="https://www.go-si.com" target="_blank">Go-si ↗</a></li>
+          <li><a href="https://www.go-si.com" target="_blank">Go-si Vilcagua ↗</a></li>
           <li><a href="https://www.emiratefarms.ae" target="_blank">Emirate Farms ↗</a></li>
           <li><a href="brands.html#meat-products">ECG Meat Products</a></li>
-          <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef ↗</a></li>
+          <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef To Home ↗</a></li>
           <li><a href="https://www.obites.ae" target="_blank">O'Bites ↗</a></li>
           <li><a href="https://www.fuego.ae" target="_blank">Fuego ↗</a></li>
         </ul>
@@ -852,31 +974,19 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="sustainability.html">Sustainability</a></li>
           <li><a href="brands.html">Our Brands</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="footer-contact-item">
-          <span class="icon">📞</span>
-          <div>
-            <div><a href="tel:043570320" style="color:inherit;text-decoration:none;">(04) 357 0320</a></div>
-            <div><a href="tel:0552402196" style="color:inherit;text-decoration:none;">055 240 2196</a></div>
-          </div>
-        </div>
-        <div class="footer-contact-item">
-          <span class="icon">📍</span>
-          <span>Al Qusais Industrial Area 1, Dubai, UAE</span>
-        </div>
-        <div class="footer-contact-item">
-          <span class="icon">✉️</span>
-          <a href="mailto:info@ecochoicegroup.com" style="color:inherit;text-decoration:none;">info@ecochoicegroup.com</a>
-        </div>
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-item"><span class="icon">📞</span><div><a href="tel:043570320" style="color:inherit;text-decoration:none;">(04) 357 0320</a><br/><a href="tel:0552402196" style="color:inherit;text-decoration:none;">055 240 2196</a></div></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><a href="mailto:info@alwholesale.ae" style="color:inherit;text-decoration:none;">info@alwholesale.ae</a></div>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Al Doha St, 204th Rd,<br/>Al Qusais Industrial Area 1,<br/>Dubai, UAE</span></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Eco Choice Group of Companies. All rights reserved.</p>
-      <p style="color:var(--white-dim);font-size:0.75rem;">UAE Food Innovation Hub · Registered in Dubai, UAE</p>
+      <p>© 2026 Eco Choice Group of Companies · All Rights Reserved · Registered in Dubai, UAE</p>
+      <p style="opacity:.45;">UAE Food Innovation Hub · EMPOWERING SUSTAINABLE FOOD SECURITY, EVERY DAY</p>
     </div>
   </div>
 </footer>

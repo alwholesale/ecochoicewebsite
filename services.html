@@ -1,533 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Eco Choice Group of Companies</title>
-  <meta name="description" content="Eco Choice Group offers end-to-end food services — from wholesale trading and farming to delivery, meat processing, and restaurant operations across the UAE." />
-  <link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ===== SERVICE PILLARS ===== */
-    .pillars-section { padding: 7rem 0; }
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 4rem;
-    }
-    .pillar-card {
-      background: rgba(17,26,20,0.4);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-      cursor: default;
-    }
-    .pillar-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 0;
-      background: linear-gradient(to top, rgba(26,92,56,0.2), transparent);
-      transition: height 0.5s ease;
-    }
-    .pillar-card:hover::after { height: 100%; }
-    .pillar-card:hover {
-      border-color: var(--green-light);
-      transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(26,92,56,0.3);
-    }
-    .pillar-icon {
-      width: 64px; height: 64px;
-      border-radius: var(--radius);
-      background: rgba(26,92,56,0.2);
-      border: 1px solid var(--border-green);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.8rem;
-      position: relative; z-index: 1;
-      transition: var(--transition);
-    }
-    .pillar-card:hover .pillar-icon { background: var(--green); border-color: var(--green-light); }
-    .pillar-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.8rem;
-      position: relative; z-index: 1;
-    }
-    .pillar-card p {
-      font-size: 0.88rem;
-      color: var(--white-dim);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      position: relative; z-index: 1;
-    }
-    .pillar-features { list-style: none; position: relative; z-index: 1; }
-    .pillar-features li {
-      font-size: 0.82rem;
-      color: var(--white-dim);
-      padding: 0.35rem 0;
-      border-bottom: 1px solid rgba(245,245,240,0.06);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .pillar-features li:last-child { border-bottom: none; }
-    .pillar-features li::before {
-      content: '✓';
-      color: var(--green-light);
-      font-size: 0.8rem;
-      flex-shrink: 0;
-    }
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services — Eco Choice Group of Companies</title>
+<meta name="description" content="Eco Choice Group services — food trading, wholesale distribution, meat processing, local farming, D2C delivery, restaurant concepts across UAE."/>
+<link rel="icon" href="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ── PILLAR CARDS ── */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:4rem;}
+.pillar{
+  background:rgba(28,28,72,.45);border:1px solid var(--border);border-radius:var(--radius-xl);
+  padding:2.5rem;transition:var(--t);position:relative;overflow:hidden;
+}
+.pillar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:linear-gradient(to top,rgba(46,97,173,.18),transparent);transition:height .5s ease;}
+.pillar:hover::after{height:100%;}
+.pillar:hover{border-color:rgba(167,212,139,.28);transform:translateY(-6px);box-shadow:var(--shadow-blue);}
+.p-icon{width:60px;height:60px;border-radius:14px;background:rgba(46,97,173,.2);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:1.7rem;position:relative;z-index:1;transition:var(--t);}
+.pillar:hover .p-icon{background:var(--blue);border-color:var(--blue-light);}
+.pillar h3{font-family:var(--font-body);font-size:1.02rem;font-weight:700;color:var(--white);margin-bottom:.7rem;position:relative;z-index:1;}
+.pillar p{font-size:.84rem;color:var(--white-dim);line-height:1.72;margin-bottom:1.5rem;position:relative;z-index:1;}
+.p-list{list-style:none;position:relative;z-index:1;}
+.p-list li{font-size:.8rem;color:var(--white-dim);padding:.3rem 0;border-bottom:1px solid rgba(238,242,255,.05);display:flex;align-items:center;gap:.6rem;}
+.p-list li:last-child{border-bottom:none;}
+.p-list li::before{content:'✓';color:var(--green);font-size:.75rem;flex-shrink:0;}
 
-    /* ===== SUPPLY CHAIN VIZ ===== */
-    .supply-chain { padding: 7rem 0; background: var(--dark); }
-    .chain-visual {
-      display: flex;
-      align-items: stretch;
-      gap: 0;
-      margin-top: 4rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-    }
-    .chain-step {
-      flex: 1;
-      min-width: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    .chain-step::after {
-      content: '→';
-      position: absolute;
-      right: -12px;
-      top: 32px;
-      color: var(--gold);
-      font-size: 1.2rem;
-      z-index: 2;
-    }
-    .chain-step:last-child::after { display: none; }
-    .chain-icon-wrap {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--dark-card);
-      border: 1px solid var(--border-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-      transition: var(--transition);
-    }
-    .chain-step:hover .chain-icon-wrap {
-      background: var(--green);
-      border-color: var(--green-light);
-      transform: scale(1.1);
-    }
-    .chain-label { font-size: 0.75rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-    .chain-sub { font-size: 0.68rem; color: var(--white-dim); line-height: 1.4; }
+/* ── CHAIN ── */
+.chain-sect{padding:7rem 0;background:var(--navy-deep);}
+.chain-wrap{display:flex;align-items:center;gap:0;margin-top:4rem;overflow-x:auto;padding-bottom:1rem;}
+.chain-step{flex:1;min-width:130px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;}
+.chain-step::after{content:'→';position:absolute;right:-12px;top:28px;color:var(--green);font-size:1.2rem;z-index:2;}
+.chain-step:last-child::after{display:none;}
+.cs-icon{width:58px;height:58px;border-radius:50%;background:var(--navy-card);border:1px solid var(--border-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:.9rem;position:relative;z-index:1;transition:var(--t);}
+.chain-step:hover .cs-icon{background:var(--blue);border-color:var(--blue-light);transform:scale(1.1);}
+.cs-label{font-size:.75rem;font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:.2rem;}
+.cs-sub{font-size:.66rem;color:var(--white-dim);line-height:1.4;}
 
-    /* ===== SECTORS ===== */
-    .sectors-section { padding: 7rem 0; }
-    .sectors-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-    .sector-card {
-      background: rgba(17,26,20,0.4);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.5rem;
-      align-items: start;
-      transition: var(--transition);
-    }
-    .sector-card:hover { border-color: rgba(200,164,90,0.3); transform: translateY(-4px); }
-    .sector-icon { font-size: 2.5rem; }
-    .sector-card h3 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
-    .sector-card p { font-size: 0.87rem; color: var(--white-dim); line-height: 1.7; }
-    .sector-brands {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+/* ── SECTORS ── */
+.sectors-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:4rem;}
+.sector-card{
+  background:rgba(28,28,72,.4);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:2.2rem;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:start;transition:var(--t);
+}
+.sector-card:hover{border-color:rgba(167,212,139,.25);transform:translateY(-4px);}
+.sector-icon{font-size:2.4rem;}
+.sector-card h3{font-family:var(--font-body);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
+.sector-card p{font-size:.84rem;color:var(--white-dim);line-height:1.7;}
+.sector-brands{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.9rem;}
 
-    /* ===== PROCESS ===== */
-    .process-section { padding: 7rem 0; background: var(--dark); }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 4rem;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--green), var(--gold), var(--green));
-      z-index: 0;
-    }
-    .process-step { text-align: center; position: relative; z-index: 1; }
-    .step-num {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--green-deep);
-      border: 2px solid var(--green-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--green-light);
-      margin: 0 auto 1.5rem;
-      transition: var(--transition);
-    }
-    .process-step:hover .step-num { background: var(--green); color: var(--white); }
-    .process-step h4 { font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
-    .process-step p { font-size: 0.8rem; color: var(--white-dim); line-height: 1.6; }
+/* ── PROCESS ── */
+.process-sect{padding:7rem 0;background:var(--navy-deep);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem;position:relative;}
+.process-steps::before{content:'';position:absolute;top:27px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,var(--blue),var(--green),var(--blue));z-index:0;}
+.ps{text-align:center;position:relative;z-index:1;}
+.ps-num{width:54px;height:54px;border-radius:50%;background:var(--navy-deep);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;color:var(--blue-light);margin:0 auto 1.4rem;transition:var(--t);}
+.ps:hover .ps-num{background:var(--blue);color:#fff;}
+.ps h4{font-family:var(--font-body);font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
+.ps p{font-size:.8rem;color:var(--white-dim);line-height:1.65;}
 
-    @media (max-width: 1024px) {
-      .pillars-grid { grid-template-columns: 1fr 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .process-steps::before { display: none; }
-    }
-    @media (max-width: 768px) {
-      .pillars-grid { grid-template-columns: 1fr; }
-      .sectors-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+@media(max-width:1024px){.pillars-grid{grid-template-columns:1fr 1fr;}.process-steps{grid-template-columns:1fr 1fr;}.process-steps::before{display:none;}}
+@media(max-width:768px){.pillars-grid{grid-template-columns:1fr;}.sectors-grid{grid-template-columns:1fr;}
+.process-steps{grid-template-columns:1fr 1fr;}}
+</style>
 </head>
 <body>
-
-<div class="loader">
-  <div class="loader-logo"><img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="" onerror="this.style.display='none'" /></div>
-  <div class="loader-bar"></div>
-</div>
-
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
-      <div class="nav-logo-text">Eco Choice Group<span>of Companies</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="brands.html">Our Brands</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="sustainability.html">Sustainability</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-    </ul>
-    <button class="hamburger"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mobile-menu">
-  <button class="mobile-close">✕</button>
+<div class="loader"><div class="loader-inner"><img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="" onerror="this.style.display='none'"/><p>Eco Choice Group</p></div><div class="loader-bar"></div></div>
+<nav class="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="ECG" onerror="this.style.display='none'"/><div class="nav-logo-text">Eco Choice Group<span>of Companies · UAE</span></div></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="brands.html">Our Brands</a></li><li><a href="services.html" class="active">Services</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu"><button class="mobile-close">✕</button>
   <a href="index.html">Home</a><a href="about.html">About</a><a href="brands.html">Our Brands</a>
   <a href="services.html">Services</a><a href="sustainability.html">Sustainability</a><a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="grid-bg"></div>
   <div class="container">
     <span class="label-tag">What We Do</span>
-    <h1 class="display-lg">End-to-End<br/><em style="color:var(--gold);">Food Services</em></h1>
+    <h1 class="display-lg">End-to-End<br/><em style="color:var(--green)">Food Services</em></h1>
     <div class="divider divider-left"></div>
-    <p>From farm to fork, wholesale to dining — we operate across every critical layer of the UAE food ecosystem, creating value at each step of the supply chain.</p>
+    <p>From farm to fork, wholesale to dining — we operate across every critical layer of the UAE food ecosystem, creating value and trust at each step of the supply chain.</p>
   </div>
 </section>
 
-<!-- SERVICE PILLARS -->
-<section class="pillars-section">
+<section class="section">
   <div class="container">
     <div class="section-header fade-in">
       <span class="label-tag">Service Pillars</span>
       <h2 class="display-md">Six Core Capabilities</h2>
       <div class="divider"></div>
-      <p>Six integrated service verticals that work together to create a robust, future-ready food ecosystem for the UAE.</p>
+      <p>Six integrated service verticals that work together to create a robust, future-ready food ecosystem for the UAE and beyond.</p>
     </div>
     <div class="pillars-grid">
-
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon">🌐</div>
-        <h3>Food Trading & Import</h3>
-        <p>Strategic sourcing, importing, and distribution of premium food products across FMCG, bulk commodities, specialty foods, and fresh produce.</p>
-        <ul class="pillar-features">
-          <li>Global supplier network management</li>
-          <li>Import compliance & documentation</li>
-          <li>Competitive B2B pricing</li>
+      <div class="pillar fade-in">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Trading" alt="Trading" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>Food Trading &amp; Import</h3>
+        <p>Strategic global sourcing and distribution — importing from multiple sources to guarantee quality, freshness, and consistency across the UAE.</p>
+        <ul class="p-list">
+          <li>Multi-source global import strategy</li>
+          <li>FMCG, bulk commodity &amp; specialty foods</li>
+          <li>Import compliance &amp; documentation</li>
+          <li>Quality inspection at every stage</li>
           <li>Custom sourcing on demand</li>
-          <li>Quality inspection protocols</li>
         </ul>
       </div>
-
-      <div class="pillar-card fade-in delay-1">
-        <div class="pillar-icon">🏪</div>
-        <h3>Wholesale Distribution</h3>
-        <p>High-volume B2B food distribution connecting suppliers with restaurants, hotels, supermarkets, and institutional buyers across the UAE.</p>
-        <ul class="pillar-features">
-          <li>Next-day delivery capability</li>
-          <li>Cold chain logistics management</li>
-          <li>Bulk pricing & contract agreements</li>
-          <li>HORECA-focused solutions</li>
-          <li>Inventory management support</li>
+      <div class="pillar fade-in delay-1">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Wholesale" alt="Wholesale" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>B2B Wholesale Platform</h3>
+        <p>Al Wholesale's dynamic online platform connecting buyers and sellers with real-time interactive pricing charts and seamless operations.</p>
+        <ul class="p-list">
+          <li>Real-time transparent pricing charts</li>
+          <li>HORECA, wholesale &amp; retail channels</li>
+          <li>22-vehicle fleet for reliable delivery</li>
+          <li>Custom bulk pricing &amp; contracts</li>
+          <li>Nationwide UAE distribution</li>
         </ul>
       </div>
-
-      <div class="pillar-card fade-in delay-2">
-        <div class="pillar-icon">🌾</div>
-        <h3>Local Farming & Agriculture</h3>
-        <p>Investment in UAE-based farming using climate-adaptive methods to grow fresh produce locally and reduce dependence on food imports.</p>
-        <ul class="pillar-features">
-          <li>Hydroponic & vertical farming</li>
-          <li>Open-field sustainable cultivation</li>
+      <div class="pillar fade-in delay-2">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Farming" alt="Farming" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>Local Farming &amp; Agriculture</h3>
+        <p>UAE-grown produce through climate-resilient farming — reducing import dependency and championing local food sovereignty for the nation.</p>
+        <ul class="p-list">
+          <li>Hydroponic &amp; climate-adaptive farming</li>
+          <li>Fresh vegetables, herbs &amp; seasonal produce</li>
           <li>Farm-to-table direct supply</li>
-          <li>UAE food sovereignty support</li>
-          <li>Seasonal & year-round produce</li>
+          <li>UAE food security alignment</li>
+          <li>Year-round production capability</li>
         </ul>
       </div>
-
-      <div class="pillar-card fade-in delay-3">
-        <div class="pillar-icon">🥩</div>
-        <h3>Meat Processing & Value-Add</h3>
-        <p>End-to-end Halal meat processing, marination, packaging, and distribution — delivering premium quality from source to shelf.</p>
-        <ul class="pillar-features">
-          <li>Halal-certified processing facility</li>
-          <li>Custom cuts for HORECA</li>
-          <li>Marination & flavoring services</li>
-          <li>Vacuum-packed & retail-ready</li>
-          <li>Whole lamb & bulk order handling</li>
+      <div class="pillar fade-in delay-3">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Meat" alt="Meat" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>Meat Processing &amp; Value-Add</h3>
+        <p>State-of-the-art Halal processing facility producing premium meat for HORECA and retail with custom packaging and private label options.</p>
+        <ul class="p-list">
+          <li>Halal-certified processing factory</li>
+          <li>Custom cuts for restaurants &amp; retail</li>
+          <li>Marination &amp; ready-to-cook services</li>
+          <li>Private label &amp; custom packaging</li>
+          <li>Cold chain UAE-wide distribution</li>
         </ul>
       </div>
-
-      <div class="pillar-card fade-in delay-4">
-        <div class="pillar-icon">🚴</div>
-        <h3>D2C Delivery & Food Tech</h3>
-        <p>Direct-to-consumer food delivery platforms that leverage technology to bring premium, convenient food experiences to UAE households.</p>
-        <ul class="pillar-features">
-          <li>Same-day & scheduled delivery</li>
-          <li>Digital-first ordering experience</li>
-          <li>Subscription meal plans</li>
-          <li>Multi-brand delivery integration</li>
-          <li>Aggregator partnerships (Talabat, Deliveroo)</li>
+      <div class="pillar fade-in delay-4">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Delivery" alt="Delivery" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>D2C Delivery &amp; Retail</h3>
+        <p>Al Chef To Home delivers marinated and ready-to-cook meats direct to modern homes — online, on major platforms, and in leading retail chains.</p>
+        <ul class="p-list">
+          <li>Online ordering &amp; same-day delivery</li>
+          <li>Available in Carrefour, Nesto, Ansar Group</li>
+          <li>Safari Mall, West Zone, Al Madina &amp; more</li>
+          <li>Talabat, Deliveroo, Keeta &amp; Noon Food</li>
+          <li>Subscription &amp; bulk home delivery</li>
         </ul>
       </div>
-
-      <div class="pillar-card fade-in delay-5">
-        <div class="pillar-icon">🍽️</div>
-        <h3>Restaurant & Dining Concepts</h3>
-        <p>Innovative, scalable restaurant brands designed to deliver exceptional dining experiences across fine casual, QSR, and food court formats.</p>
-        <ul class="pillar-features">
-          <li>Premium halal dining concepts</li>
-          <li>QSR & food court operations</li>
-          <li>Event catering & private dining</li>
+      <div class="pillar fade-in delay-5">
+        <div class="p-icon">
+          <img src="https://placehold.co/60x60?text=Dining" alt="Dining" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <h3>Restaurant &amp; Dining Concepts</h3>
+        <p>From UAE's first Micro-QSR to exclusive private dining — our restaurant concepts deliver innovative food experiences across multiple formats.</p>
+        <ul class="p-list">
+          <li>O'Bites — UAE's First Micro-QSR</li>
+          <li>Fuego — exclusive Mex-Tex private dining</li>
+          <li>O'Bites Food Truck for events</li>
+          <li>Catering &amp; corporate events</li>
           <li>Franchise development pipeline</li>
-          <li>Menu innovation & R&D</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="glow-line"></div>
 
-<!-- SUPPLY CHAIN VIZ -->
-<section class="supply-chain">
+<!-- SUPPLY CHAIN -->
+<section class="chain-sect">
   <div class="container">
     <div class="section-header fade-in">
       <span class="label-tag">Our Process</span>
       <h2 class="display-md">The Full Value Chain</h2>
       <div class="divider"></div>
-      <p>We operate at every critical node of the food supply chain — giving us unparalleled control over quality, cost, and customer experience.</p>
+      <p>We operate at every critical node — from global sourcing to your table. End-to-end control means unmatched quality and efficiency.</p>
     </div>
-    <div class="chain-visual fade-in">
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🌱</div>
-        <div class="chain-label">Source</div>
-        <div class="chain-sub">Global & Local Farms</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🔍</div>
-        <div class="chain-label">Quality Control</div>
-        <div class="chain-sub">Halal & Safety Standards</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🏭</div>
-        <div class="chain-label">Process</div>
-        <div class="chain-sub">Cutting, Marinating, Packing</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">❄️</div>
-        <div class="chain-label">Cold Chain</div>
-        <div class="chain-sub">Temperature-Controlled Storage</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🚚</div>
-        <div class="chain-label">Distribute</div>
-        <div class="chain-sub">B2B & D2C Delivery</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🛒</div>
-        <div class="chain-label">Retail / Wholesale</div>
-        <div class="chain-sub">Al Wholesale Platform</div>
-      </div>
-      <div class="chain-step">
-        <div class="chain-icon-wrap">🍽️</div>
-        <div class="chain-label">Consumer</div>
-        <div class="chain-sub">Restaurants & Homes</div>
-      </div>
+    <div class="chain-wrap fade-in">
+      <div class="chain-step"><div class="cs-icon">🌱</div><div class="cs-label">Source</div><div class="cs-sub">Global &amp; Local Farms</div></div>
+      <div class="chain-step"><div class="cs-icon">🔍</div><div class="cs-label">Quality Check</div><div class="cs-sub">Halal &amp; Safety</div></div>
+      <div class="chain-step"><div class="cs-icon">🏭</div><div class="cs-label">Process</div><div class="cs-sub">Cut, Marinate, Pack</div></div>
+      <div class="chain-step"><div class="cs-icon">❄️</div><div class="cs-label">Cold Chain</div><div class="cs-sub">Temperature Control</div></div>
+      <div class="chain-step"><div class="cs-icon">🚚</div><div class="cs-label">Distribute</div><div class="cs-sub">22-Vehicle Fleet</div></div>
+      <div class="chain-step"><div class="cs-icon">📊</div><div class="cs-label">Wholesale</div><div class="cs-sub">Al Wholesale Platform</div></div>
+      <div class="chain-step"><div class="cs-icon">🛒</div><div class="cs-label">Retail</div><div class="cs-sub">Carrefour, Nesto &amp; More</div></div>
+      <div class="chain-step"><div class="cs-icon">🍽️</div><div class="cs-label">Consumer</div><div class="cs-sub">Homes &amp; Restaurants</div></div>
     </div>
   </div>
 </section>
 
 <!-- SECTORS -->
-<section class="sectors-section">
+<section class="section">
   <div class="container">
     <div class="section-header fade-in">
       <span class="label-tag">Who We Serve</span>
       <h2 class="display-md">Industries &amp; Sectors</h2>
       <div class="divider"></div>
-      <p>Our services are tailored to serve a diverse range of industries that form the backbone of the UAE's food ecosystem.</p>
     </div>
     <div class="sectors-grid">
-      <div class="sector-card fade-in">
-        <div class="sector-icon">🏨</div>
-        <div>
-          <h3>Hotels & Hospitality</h3>
-          <p>Premium food supply, specialty cuts, and custom sourcing for 3★ to 5★ hotels, resorts, and luxury hospitality establishments across the UAE — with reliability and consistency that the hospitality sector demands.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">Al Wholesale</span>
-            <span class="tag-pill-green">ECG Trading</span>
-            <span class="tag-pill-green">ECG Meat</span>
-          </div>
-        </div>
-      </div>
-      <div class="sector-card fade-in delay-1">
-        <div class="sector-icon">🍳</div>
-        <div>
-          <h3>Restaurants & Cafes</h3>
-          <p>Comprehensive food supply solutions for independent restaurants, café chains, and food court operators — from raw ingredients to marinated, ready-to-cook, and ready-to-serve products.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">Al Chef</span>
-            <span class="tag-pill-green">Al Wholesale</span>
-            <span class="tag-pill-green">ECG Meat</span>
-          </div>
-        </div>
-      </div>
-      <div class="sector-card fade-in delay-2">
-        <div class="sector-icon">🛒</div>
-        <div>
-          <h3>Supermarkets & Retail</h3>
-          <p>Private label meat products, fresh produce, and packaged food lines for supermarket chains and independent retail stores — with retail-ready packaging and consistent supply volumes.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">ECG Trading</span>
-            <span class="tag-pill-green">Emirate Farms</span>
-            <span class="tag-pill-green">ECG Meat</span>
-          </div>
-        </div>
-      </div>
-      <div class="sector-card fade-in delay-3">
-        <div class="sector-icon">🏢</div>
-        <div>
-          <h3>Corporate & Institutional</h3>
-          <p>Large-scale catering supply for corporate campuses, industrial facilities, schools, and government institutions across the UAE — high volume, halal-certified, and punctually delivered.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">Al Wholesale</span>
-            <span class="tag-pill-green">ECG Trading</span>
-          </div>
-        </div>
-      </div>
-      <div class="sector-card fade-in delay-1">
-        <div class="sector-icon">🏠</div>
-        <div>
-          <h3>Direct-to-Consumer</h3>
-          <p>Premium food delivered directly to UAE households through Al Chef To Home, Go-si, and third-party platforms — fresh, marinated, and ready-to-cook with same-day delivery options.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">Al Chef</span>
-            <span class="tag-pill-green">Go-si</span>
-            <span class="tag-pill-green">O'Bites</span>
-          </div>
-        </div>
-      </div>
-      <div class="sector-card fade-in delay-2">
-        <div class="sector-icon">🌍</div>
-        <div>
-          <h3>Export & International</h3>
-          <p>Leveraging our import-export expertise to serve regional markets beyond the UAE — supplying halal-certified food products to GCC countries and international buyers through our trading arm.</p>
-          <div class="sector-brands">
-            <span class="tag-pill-green">ECG Trading</span>
-            <span class="tag-pill-green">Al Wholesale</span>
-          </div>
-        </div>
-      </div>
+      <div class="sector-card fade-in"><div class="sector-icon">🏨</div><div><h3>Hotels &amp; Hospitality</h3><p>Premium Halal food supply, specialty cuts, and custom sourcing for 3★ to 5★ hotels, resorts, and hospitality groups across the UAE.</p><div class="sector-brands"><span class="tag-pill-green">Al Wholesale</span><span class="tag-pill-green">ECG Trading</span><span class="tag-pill-green">ECG Meat</span></div></div></div>
+      <div class="sector-card fade-in delay-1"><div class="sector-icon">🍳</div><div><h3>Restaurants &amp; Cafes</h3><p>Complete food supply from raw ingredients to marinated ready-to-cook products — serving independent restaurants, chains, and food courts.</p><div class="sector-brands"><span class="tag-pill-green">Al Chef</span><span class="tag-pill-green">Al Wholesale</span></div></div></div>
+      <div class="sector-card fade-in delay-2"><div class="sector-icon">🛒</div><div><h3>Supermarkets &amp; Retail</h3><p>Available in Carrefour, Nesto, Ansar Group, Safari Mall, West Zone, Al Madina, and Day to Day — consistent retail presence across UAE.</p><div class="sector-brands"><span class="tag-pill-green">Al Chef</span><span class="tag-pill-green">ECG Meat</span></div></div></div>
+      <div class="sector-card fade-in delay-3"><div class="sector-icon">🏠</div><div><h3>Direct-to-Consumer</h3><p>Premium food delivered to UAE homes through Al Chef To Home and available on all major food delivery platforms nationwide.</p><div class="sector-brands"><span class="tag-pill-green">Al Chef</span><span class="tag-pill-green">O'Bites</span></div></div></div>
+      <div class="sector-card fade-in delay-1"><div class="sector-icon">🏢</div><div><h3>Corporate &amp; Institutional</h3><p>High-volume Halal food supply for corporate campuses, schools, hospitals, and government institutions — reliable and certified.</p><div class="sector-brands"><span class="tag-pill-green">Al Wholesale</span><span class="tag-pill-green">ECG Trading</span></div></div></div>
+      <div class="sector-card fade-in delay-2"><div class="sector-icon">🌍</div><div><h3>Export &amp; GCC Markets</h3><p>Leveraging our import-export expertise to serve regional markets in the GCC with Halal-certified food products through our trading arm.</p><div class="sector-brands"><span class="tag-pill-green">ECG Trading</span><span class="tag-pill-green">Al Wholesale</span></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="process-section">
+<section class="process-sect">
   <div class="container">
     <div class="section-header fade-in">
       <span class="label-tag">Working With Us</span>
       <h2 class="display-md">How We Work</h2>
       <div class="divider"></div>
-      <p>A simple, transparent process to get started with Eco Choice Group as a partner, supplier, or client.</p>
     </div>
     <div class="process-steps fade-in">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h4>Initial Consultation</h4>
-        <p>Reach out to us and tell us about your needs — whether you're a buyer, supplier, or partner prospect, we listen first.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h4>Needs Assessment</h4>
-        <p>Our team assesses your requirements, volumes, timelines, and quality standards to propose the best fit solution.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h4>Proposal & Agreement</h4>
-        <p>We present a clear proposal with pricing, timelines, and quality commitments — then formalize our partnership.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h4>Delivery & Ongoing Support</h4>
-        <p>We deliver with consistency and maintain close communication throughout the relationship — you're never alone.</p>
-      </div>
+      <div class="ps"><div class="ps-num">01</div><h4>Initial Consultation</h4><p>Reach out — tell us about your needs. Whether buyer, supplier, or partner, we listen first.</p></div>
+      <div class="ps"><div class="ps-num">02</div><h4>Needs Assessment</h4><p>Our team assesses requirements, volumes, timelines, and quality standards to propose the ideal solution.</p></div>
+      <div class="ps"><div class="ps-num">03</div><h4>Proposal &amp; Agreement</h4><p>Clear pricing, timelines, and quality commitments — then we formalize our partnership with full transparency.</p></div>
+      <div class="ps"><div class="ps-num">04</div><h4>Delivery &amp; Support</h4><p>We deliver with consistency and stay close — you're never alone throughout the partnership journey.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section style="padding:6rem 0;text-align:center;position:relative;">
   <div class="grid-bg"></div>
   <div class="container fade-in" style="position:relative;z-index:1;">
     <span class="label-tag">Let's Talk Business</span>
-    <h2 class="display-md" style="margin:1rem 0;">Need Food Solutions<br/>for Your <em style="color:var(--gold)">Business?</em></h2>
-    <p style="color:var(--white-dim);max-width:500px;margin:0 auto 2.5rem;font-size:1rem;">Our team is ready to understand your requirements and build a solution that works for you. No problem is too large or small.</p>
+    <h2 class="display-md" style="margin:1rem 0;">Need Food Solutions<br/>for Your <em style="color:var(--green)">Business?</em></h2>
+    <p style="color:var(--white-dim);max-width:500px;margin:0 auto 2.5rem;line-height:1.75;">From wholesale supply to custom meat processing — our team is ready to build the right solution for you.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-gold btn-arrow">Start the Conversation</a>
+      <a href="contact.html" class="btn btn-green btn-arrow">Start the Conversation</a>
       <a href="brands.html" class="btn btn-outline">Explore Our Brands</a>
     </div>
   </div>
@@ -537,45 +263,31 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="Eco Choice Group" onerror="this.style.display='none'" />
+        <img src="https://ecochoicegroup.com/wp-content/uploads/2025/12/ecg-logo.png" alt="ECG" onerror="this.style.display='none'"/>
+        <div class="footer-tagline">"From UAE Roots, Growing Global Food Security"</div>
         <p>A UAE-based food innovation hub building scalable, sustainable food systems across the entire value chain.</p>
-        <div class="social-links" style="margin-top:1.5rem;">
-          <a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="#" class="social-link">fb</a>
-        </div>
+        <div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="#" class="social-link">fb</a></div>
       </div>
-      <div class="footer-col">
-        <h4>Our Brands</h4>
-        <ul>
-          <li><a href="brands.html#general-trading">Eco Choice Trading</a></li>
-          <li><a href="https://www.alwholesale.ae" target="_blank">Al Wholesale ↗</a></li>
-          <li><a href="https://www.go-si.com" target="_blank">Go-si ↗</a></li>
-          <li><a href="https://www.emiratefarms.ae" target="_blank">Emirate Farms ↗</a></li>
-          <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef ↗</a></li>
-          <li><a href="https://www.obites.ae" target="_blank">O'Bites ↗</a></li>
-          <li><a href="https://www.fuego.ae" target="_blank">Fuego ↗</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="sustainability.html">Sustainability</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="footer-contact-item"><span class="icon">📞</span><div><div>(04) 357 0320</div><div>055 240 2196</div></div></div>
-        <div class="footer-contact-item"><span class="icon">📍</span><span>Al Qusais Industrial Area 1, Dubai, UAE</span></div>
+      <div class="footer-col"><h4>Our Brands</h4><ul>
+        <li><a href="brands.html#general-trading">Eco Choice Trading</a></li>
+        <li><a href="https://www.alwholesale.ae" target="_blank">Al Wholesale ↗</a></li>
+        <li><a href="https://www.emiratefarms.ae" target="_blank">Emirate Farms ↗</a></li>
+        <li><a href="https://www.alcheftohome.com" target="_blank">Al Chef ↗</a></li>
+        <li><a href="https://www.obites.ae" target="_blank">O'Bites ↗</a></li>
+        <li><a href="https://www.fuego.ae" target="_blank">Fuego ↗</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Get In Touch</h4>
+        <div class="footer-contact-item"><span class="icon">📞</span><div><a href="tel:043570320" style="color:inherit;text-decoration:none;">(04) 357 0320</a><br/><a href="tel:0552402196" style="color:inherit;text-decoration:none;">055 240 2196</a></div></div>
+        <div class="footer-contact-item"><span class="icon">📍</span><span>Al Qusais Industrial Area 1,<br/>Dubai, UAE</span></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Eco Choice Group of Companies. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Eco Choice Group of Companies · All Rights Reserved · Dubai, UAE</p></div>
   </div>
 </footer>
-
 <script src="main.js"></script>
 </body>
 </html>
